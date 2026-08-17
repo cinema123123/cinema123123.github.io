@@ -1,0 +1,323 @@
+:root{
+  --bg:#070914;
+  --panel:#0f1328;
+  --panel2:#151a35;
+  --text:#f5f7ff;
+  --muted:#8e9abb;
+  --accent:#00eaff;
+  --accent2:#9b5cff;
+  --danger:#ff4d7d;
+  --good:#5dff9a;
+  --glow:0 0 18px color-mix(in srgb, var(--accent) 65%, transparent);
+}
+*{box-sizing:border-box}
+html{
+  background:#070914;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  overscroll-behavior-y:none;
+}
+button{
+  -webkit-appearance:none;
+  appearance:none;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
+  -webkit-user-select:none;
+}
+button, .click-btn, .tab, .target, .reaction-btn{
+  touch-action:manipulation;
+}
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 20% 10%, color-mix(in srgb,var(--accent2) 20%,transparent), transparent 32rem),
+    radial-gradient(circle at 80% 20%, color-mix(in srgb,var(--accent) 16%,transparent), transparent 28rem),
+    linear-gradient(180deg,#070914,#0b0e1c 60%,#070914);
+  overflow-x:hidden;
+  min-height:100dvh;
+  overscroll-behavior-y:none;
+  -webkit-overflow-scrolling:touch;
+}
+button{font:inherit}
+.app{
+  max-width:1100px;
+  margin:auto;
+  padding:
+    max(12px, env(safe-area-inset-top))
+    max(12px, env(safe-area-inset-right))
+    calc(42px + env(safe-area-inset-bottom))
+    max(12px, env(safe-area-inset-left));
+}
+.topbar{
+  position:sticky;top:max(0px, env(safe-area-inset-top));z-index:20;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
+  padding:12px;background:rgba(7,9,20,.82);backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.06);border-radius:18px;
+}
+.stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:10px 12px;border-radius:14px}
+.stat b{display:block;font-size:18px}
+.stat span{font-size:12px;color:var(--muted)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:16px}
+.card{background:linear-gradient(180deg,rgba(19,24,50,.92),rgba(11,14,30,.92));border:1px solid rgba(255,255,255,.07);border-radius:22px;padding:18px;box-shadow:0 20px 70px rgba(0,0,0,.25)}
+.click-zone{min-height:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.aura-ring{
+  width:260px;height:260px;border-radius:50%;position:absolute;
+  pointer-events:none;
+  border:2px solid color-mix(in srgb,var(--accent) 65%,transparent);
+  box-shadow:0 0 28px var(--accent),inset 0 0 28px color-mix(in srgb,var(--accent) 40%,transparent);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{50%{transform:scale(1.05);opacity:.78}}
+.click-btn{
+  width:190px;height:190px;border:0;border-radius:50%;cursor:pointer;z-index:2;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;
+  color:#fff;font-weight:900;font-size:24px;letter-spacing:.08em;
+  background:
+    radial-gradient(circle at 35% 30%,rgba(255,255,255,.22),transparent 20%),
+    linear-gradient(145deg,var(--accent2),var(--accent));
+  box-shadow:0 0 26px color-mix(in srgb,var(--accent) 70%,transparent),inset 0 0 30px rgba(255,255,255,.16);
+  transition:transform .08s ease,filter .08s ease;
+}
+.click-btn:active,.click-btn.hit{transform:scale(.93);filter:brightness(1.25)}
+.float{position:absolute;pointer-events:none;font-weight:900;color:#fff;text-shadow:0 0 14px var(--accent);animation:fly .75s ease-out forwards;z-index:10}
+@keyframes fly{from{transform:translate(-50%,0) scale(.9);opacity:1}to{transform:translate(-50%,-90px) scale(1.15);opacity:0}}
+.small{color:var(--muted);font-size:13px}
+.metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+.metric{padding:12px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.metric b{display:block;font-size:20px}
+.tabs{display:flex;gap:8px;overflow:auto;margin:16px 0 10px;padding-bottom:2px}
+.tab{border:1px solid rgba(255,255,255,.08);background:#10152b;color:#bcc5df;padding:11px 14px;border-radius:12px;cursor:pointer;white-space:nowrap;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.tab.active{color:#fff;border-color:var(--accent);box-shadow:0 0 14px color-mix(in srgb,var(--accent) 25%,transparent)}
+.shop{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.item{padding:14px;border:1px solid rgba(255,255,255,.07);border-radius:16px;background:rgba(255,255,255,.035)}
+.item h3{margin:0 0 6px;font-size:16px}
+.item p{margin:5px 0;color:var(--muted);font-size:13px}
+.item button,.primary,.danger{
+  width:100%;min-height:46px;margin-top:10px;padding:11px 12px;border-radius:11px;border:0;cursor:pointer;font-weight:800
+}
+.item button,.primary{background:linear-gradient(90deg,var(--accent2),var(--accent));color:white}
+.item button:disabled{opacity:.38;cursor:not-allowed}
+.danger{background:#341220;color:#ffb5c8;border:1px solid #6b2542}
+.badge{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:800;background:rgba(255,255,255,.07)}
+.inventory{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.pet{padding:12px;border-radius:15px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.035)}
+.pet.equipped{border-color:var(--good);box-shadow:0 0 16px rgba(93,255,154,.12)}
+.pet .emoji{font-size:34px}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:18px 0 10px}
+.section-title h2{font-size:18px;margin:0}
+.hidden{display:none!important}
+
+.minigames{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.game-card{min-height:300px;display:flex;flex-direction:column}
+.game-status{padding:12px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);margin:8px 0 12px}
+.reaction-btn{
+  min-height:110px;border:1px solid rgba(255,255,255,.08);border-radius:16px;
+  background:#171d38;color:#fff;font-weight:900;font-size:18px;cursor:pointer;
+  touch-action:manipulation
+}
+.reaction-btn.waiting{background:#3a1d2e}
+.reaction-btn.ready{background:linear-gradient(90deg,var(--accent2),var(--accent));box-shadow:var(--glow)}
+.target-field{
+  position:relative;flex:1;min-height:210px;border-radius:16px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));
+  border:1px solid rgba(255,255,255,.07)
+}
+.target{
+  position:absolute;width:58px;height:58px;border-radius:50%;border:0;cursor:pointer;
+  background:linear-gradient(145deg,var(--accent2),var(--accent));
+  box-shadow:0 0 20px var(--accent);color:white;font-weight:900;
+  transform:translate(-50%,-50%);touch-action:manipulation
+}
+@media(max-width:760px){.minigames{grid-template-columns:1fr}}
+
+.rng-box{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-bottom:14px}
+.rng-result{min-height:72px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);font-weight:900}
+.rebirth-card{max-width:620px;margin:auto;text-align:center}
+.rebirth-icon{font-size:64px;filter:drop-shadow(0 0 18px var(--accent))}
+.rebirth-card .primary{max-width:360px}
+.log{max-height:160px;overflow:auto;font-size:12px;color:var(--muted)}
+.log div{padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+@media(max-width:760px){
+  .topbar{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr}
+  .click-zone{min-height:360px}
+  .shop{grid-template-columns:1fr}
+  .inventory{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ===== iPhone / narrow-screen layout ===== */
+@media (max-width: 760px){
+  body{
+    padding:0;
+    padding-bottom:calc(82px + env(safe-area-inset-bottom));
+  }
+
+  .app{
+    width:100%;
+    padding:
+      max(8px, env(safe-area-inset-top))
+      max(10px, env(safe-area-inset-right))
+      calc(96px + env(safe-area-inset-bottom))
+      max(10px, env(safe-area-inset-left));
+  }
+
+  .topbar{
+    top:max(0px, env(safe-area-inset-top));
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:6px;
+    padding:7px;
+    border-radius:15px;
+  }
+
+  .topbar .stat:last-child{
+    grid-column:1 / -1;
+  }
+
+  .stat{
+    min-width:0;
+    padding:8px 10px;
+  }
+
+  .stat b{
+    font-size:16px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .stat span{font-size:10px}
+
+  .hero{
+    display:block;
+    margin-top:10px;
+  }
+
+  .hero > .card + .card{
+    margin-top:10px;
+  }
+
+  .card{
+    padding:14px;
+    border-radius:18px;
+  }
+
+  .click-zone{
+    min-height:310px;
+  }
+
+  .aura-ring{
+    width:220px;
+    height:220px;
+  }
+
+  .click-btn{
+    width:166px;
+    height:166px;
+    font-size:21px;
+  }
+
+  .metric-grid{
+    gap:7px;
+  }
+
+  .metric{
+    padding:9px;
+  }
+
+  .metric b{font-size:17px}
+  .small{font-size:12px}
+
+  .tabs{
+    position:fixed;
+    z-index:100;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:0;
+    padding:
+      7px
+      max(7px, env(safe-area-inset-right))
+      calc(7px + env(safe-area-inset-bottom))
+      max(7px, env(safe-area-inset-left));
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:6px;
+    background:rgba(7,9,20,.94);
+    border-top:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    overflow:visible;
+  }
+
+  .tab{
+    min-width:0;
+    min-height:42px;
+    padding:7px 5px;
+    border-radius:10px;
+    white-space:normal;
+    font-size:10.5px;
+    line-height:1.1;
+    text-align:center;
+  }
+
+  .shop,
+  .inventory,
+  .minigames{
+    grid-template-columns:1fr;
+  }
+
+  .rng-box{
+    grid-template-columns:1fr;
+  }
+
+  #rollAuraBtn{
+    width:100%!important;
+    min-width:0!important;
+  }
+
+  .game-card{
+    min-height:260px;
+  }
+
+  .reaction-btn{
+    min-height:120px;
+  }
+
+  .target-field{
+    min-height:250px;
+  }
+
+  .target{
+    width:64px;
+    height:64px;
+  }
+
+  .section-title{
+    align-items:flex-start;
+  }
+}
+
+/* iPhone SE / very narrow devices */
+@media (max-width: 390px){
+  .click-zone{min-height:285px}
+  .aura-ring{width:200px;height:200px}
+  .click-btn{width:150px;height:150px;font-size:19px}
+  .card{padding:12px}
+  .tab{font-size:9.5px;padding:6px 3px}
+}
+
+/* Landscape iPhone: keep the click target usable without excessive height */
+@media (max-height: 500px) and (orientation: landscape){
+  .click-zone{min-height:260px}
+  .aura-ring{width:190px;height:190px}
+  .click-btn{width:145px;height:145px}
+  .topbar{position:relative;top:auto}
+}
+
+/* Avoid accidental long-press menus on game controls */
+.click-btn,.reaction-btn,.target,.tab,.primary,.danger,.item button{
+  -webkit-touch-callout:none;
+}
