@@ -7,15 +7,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Neon Clicker">
-<meta name="format-detection" content="telephone=no">
 <title>Neon Clicker</title>
-
 <link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="icons/icon-180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div id="rareFlash" class="rare-flash"></div>
 <div class="app">
   <div class="topbar">
     <div class="stat"><span>Клики</span><b id="clicks">0</b></div>
@@ -23,13 +21,20 @@
     <div class="stat"><span>За тап</span><b id="perClick">1</b></div>
     <div class="stat"><span>В секунду</span><b id="perSec">0</b></div>
     <div class="stat"><span>Перерождения</span><b id="rebirths">0</b></div>
+    <div class="stat"><span>Энергия</span><b id="energyTop">100 / 100</b></div>
   </div>
 
   <div class="hero">
     <section class="card click-zone" id="clickZone">
-      <div class="aura-ring" id="auraRing"></div>
-      <button type="button" class="click-btn" id="clickButton" aria-label="Сделать клик">КЛИК</button>
-      <p class="small" id="equippedAuraLabel">Аура: Нет</p>
+      <div class="click-core">
+        <div class="aura-ring" id="auraRing"></div>
+        <button type="button" class="click-btn" id="clickButton" aria-label="Сделать клик">КЛИК</button>
+      </div>
+      <div class="energy-wrap">
+        <div class="energy-row"><span>⚡ Энергия</span><b id="energyText">100 / 100</b></div>
+        <div class="energy-bar"><div class="energy-fill" id="energyFill"></div></div>
+      </div>
+      <p class="small aura-label" id="equippedAuraLabel">Аура: Нет</p>
     </section>
 
     <section class="card">
@@ -44,6 +49,7 @@
       <div class="section-title"><h2>Экипировано питомцев</h2><span class="badge" id="petSlots">0 / 3</span></div>
       <div id="equippedPets" class="small">Пусто</div>
       <div class="section-title"><h2>События</h2></div>
+      <div id="eventPanel" class="event-live"><b>Событий сейчас нет</b></div>
       <div id="log" class="log"></div>
     </section>
   </div>
@@ -51,10 +57,15 @@
   <div class="tabs">
     <button class="tab active" data-tab="clickShop">Клики</button>
     <button class="tab" data-tab="auraShop">Ауры</button>
+    <button class="tab" data-tab="auraIndex">Индекс аур</button>
     <button class="tab" data-tab="eggShop">Яйца питомцев</button>
     <button class="tab" data-tab="pets">Питомцы</button>
     <button class="tab" data-tab="rebirth">Перерождение</button>
     <button class="tab" data-tab="minigames">Мини-игры</button>
+    <button class="tab" data-tab="missions">Задания</button>
+    <button class="tab" data-tab="progression">Прогресс</button>
+    <button class="tab" data-tab="boss">Босс</button>
+    <button class="tab" data-tab="stats">Статистика</button>
   </div>
 
   <section id="clickShop" class="panel">
@@ -62,18 +73,72 @@
   </section>
 
   <section id="auraShop" class="panel hidden">
+
+    <div class="card aura-luck-card">
+      <div class="section-title">
+        <h2>🍀 Удача аур</h2>
+        <span class="badge">RNG BOOST</span>
+      </div>
+      <div class="metric-grid">
+        <div class="metric"><span class="small">Уровень</span><b id="auraLuckLevel">0</b></div>
+        <div class="metric"><span class="small">Удача</span><b id="auraLuckMult">x1.00</b></div>
+        <div class="metric"><span class="small">RNG-попытки</span><b id="auraLuckRolls">1 гарант.</b></div>
+        <div class="metric"><span class="small">Цена</span><b id="auraLuckCost">5K</b></div>
+      </div>
+      <button class="primary" id="auraLuckBtn">Прокачать удачу</button>
+      <p class="small">
+        Каждая дополнительная RNG-попытка роллит ауру ещё раз, а игра оставляет самый редкий результат.
+        Поэтому базовые шансы 1/2, 1/4, 1/8, 1/16… остаются настоящими.
+      </p>
+    </div>
+
     <div class="card" style="margin-bottom:12px">
       <div class="section-title">
         <h2>RNG аур</h2>
-        <span class="badge">60% / 25% / 10% / 4% / 1%</span>
+        <span class="badge">1/2 → 1/1 073 741 824</span>
       </div>
-      <div class="rng-box">
+      
+<div class="rng-ladder">
+  <div class="rng-chip"><b>1/2</b><span>Неоновый контур</span></div>
+  <div class="rng-chip"><b>1/4</b><span>Искра мегаполиса</span></div>
+  <div class="rng-chip"><b>1/8</b><span>Кислотный след</span></div>
+  <div class="rng-chip"><b>1/16</b><span>Розовый импульс</span></div>
+  <div class="rng-chip"><b>1/32</b><span>Стальной резонанс</span></div>
+  <div class="rng-chip"><b>1/64</b><span>Угольный заряд</span></div>
+</div>
+
+<div class="rng-box">
         <div class="rng-result" id="auraRollResult">Нажми «Крутить ауру»</div>
         <button class="primary" id="rollAuraBtn" style="width:auto;min-width:190px">Крутить за 500 кликов</button>
       </div>
-      <p class="small">Дубликат ауры повышает её уровень. Каждый уровень усиливает её множитель.</p>
+      <p class="small">34 ауры: от 1/2 до 1/17 179 869 184. Дубликат повышает уровень.</p>
+      <div class="auto-roll-card">
+        <div><b>🤖 Auto Roll</b><span class="small">1 ролл/сек, стоимость каждого ролла 500 кликов</span></div>
+        <button class="primary" id="autoRollUnlockBtn">Открыть Auto Roll за 20 💎</button>
+        <button class="primary hidden" id="autoRollToggle">▶️ Включить Auto Roll</button>
+        <label class="small">Auto Skip — не показывать всё хуже:</label>
+        <select id="autoSkipSelect">
+          <option value="2">1/2</option><option value="8">1/8</option><option value="128" selected>1/128</option>
+          <option value="2048">1/2 048</option><option value="32768">1/32 768</option><option value="1048576">1/1 048 576</option>
+        </select>
+      </div>
+
     </div>
     <div class="shop" id="auraList"></div>
+  </section>
+
+
+  <section id="auraIndex" class="panel hidden">
+    <div class="card">
+      <div class="section-title">
+        <h2>📖 Индекс аур</h2>
+        <span class="badge" id="auraIndexCounter">0 / 30</span>
+      </div>
+      <p class="small">Все 34 ауры, включая SECRET и CELESTIAL. Полученные раскрываются, неизвестные остаются скрытыми.</p>
+      <div class="aura-index-progress"><div id="auraIndexProgress"></div></div>
+      <div id="auraIndexRewards" class="index-rewards"></div>
+    </div>
+    <div class="aura-index-grid" id="auraIndexGrid"></div>
   </section>
 
   <section id="eggShop" class="panel hidden">
@@ -98,9 +163,10 @@
         <div class="metric"><span class="small">Постоянный множитель</span><b id="rebirthMultiplier">x1</b></div>
         <div class="metric"><span class="small">Цена следующего</span><b id="rebirthCost">50K</b></div>
         <div class="metric"><span class="small">Бонус кристаллов</span><b>+3</b></div>
+        <div class="metric"><span class="small">Souls</span><b id="rebirthSouls">0</b></div>
       </div>
       <button class="primary" id="rebirthBtn">Переродиться</button>
-      <p class="small">Сохраняются: питомцы, ауры, кристаллы и достижения.</p>
+      <p class="small">Сохраняются: питомцы, ауры, кристаллы, Souls, дерево и достижения.</p>
     </div>
   </section>
 
@@ -126,15 +192,30 @@
     </div>
   </section>
 
-</div>
 
+  <section id="missions" class="panel hidden">
+    <div class="card"><div class="section-title"><h2>🎯 Задания</h2><span class="badge">Награды</span></div><div id="questGrid" class="quest-grid"></div></div>
+    <div class="card spaced-card"><div class="section-title"><h2>🏆 Достижения</h2></div><div id="achievementGrid" class="achievement-grid"></div></div>
+    <div class="card spaced-card"><div class="section-title"><h2>🎁 Ежедневная награда</h2><span class="badge" id="dailyStreak">День 1 / 7</span></div><p>Сегодня: <b id="dailyReward">—</b></p><button class="primary" id="dailyClaimBtn">Забрать награду</button></div>
+  </section>
+
+  <section id="progression" class="panel hidden">
+    <div class="progress-grid">
+      <div class="card"><div class="section-title"><h2>⚡ Энергия</h2></div><div class="metric-grid"><div class="metric"><span>Максимум</span><b id="energyMaxValue">100</b></div><div class="metric"><span>Реген</span><b id="energyRegenValue">2/сек</b></div></div><button class="primary" id="energyMaxBtn">+25 энергии • <span id="energyMaxCost">10K</span></button><button class="primary" id="energyRegenBtn">+0.25/сек • <span id="energyRegenCost">5 💎</span></button></div>
+      <div class="card"><div class="section-title"><h2>🍀 Luck Boosts</h2></div><div id="boostInventory"></div></div>
+    </div>
+    <div class="card spaced-card"><div class="section-title"><h2>🌌 Дерево перерождений</h2><span class="badge">Souls: <b id="soulsValue">0</b></span></div><div id="soulTree" class="soul-tree"></div></div>
+  </section>
+
+  <section id="boss" class="panel hidden">
+    <div class="card boss-card" id="bossPanel"><div class="boss-icon">👹</div><h2>WORLD BOSS</h2><p class="small">45 секунд. Ручная атака наносит x8 твоего тапа, питомцы и автоклик тоже атакуют.</p><div class="boss-hp"><div id="bossHpFill"></div></div><b id="bossHpText">Босс не активен</b><p id="bossTimer" class="boss-timer">Готов к бою</p><div class="metric"><span>Побед</span><b id="bossWins">0</b></div><button class="primary" id="bossStartBtn">Призвать босса</button><button class="primary danger-boss" id="bossAttackBtn" disabled>⚔️ АТАКОВАТЬ</button></div>
+  </section>
+
+  <section id="stats" class="panel hidden">
+    <div class="card"><div class="section-title"><h2>📊 Статистика</h2></div><div id="statsGrid" class="stats-grid"></div></div>
+  </section>
+
+</div>
 <script src="app.js" defer></script>
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js").catch(console.error);
-  });
-}
-</script>
-</body>
-</html>
+<script>if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(console.error));</script>
+</body></html>
