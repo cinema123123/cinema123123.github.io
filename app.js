@@ -75,39 +75,39 @@ const auras = [
 
 const pets = {
   // Обычные
-  nanoCat:{name:'Лошадь — Обычная', rarity:'common', click:1.08, auto:1.03},
-  rabbit:{name:'Кролик — Обычный', rarity:'common', click:1.09, auto:1.04},
-  dog:{name:'Пёс — Обычный', rarity:'common', click:1.10, auto:1.05},
-  boar:{name:'Кабан — Обычный', rarity:'common', click:1.11, auto:1.05},
-  owl:{name:'Сова — Обычная', rarity:'common', click:1.12, auto:1.06},
+  nanoCat:{name:'Лошадь', rarity:'common', click:1.08, auto:1.03},
+  rabbit:{name:'Кролик', rarity:'common', click:1.09, auto:1.04},
+  dog:{name:'Пёс', rarity:'common', click:1.10, auto:1.05},
+  boar:{name:'Кабан', rarity:'common', click:1.11, auto:1.05},
+  owl:{name:'Сова', rarity:'common', click:1.12, auto:1.06},
 
   // Редкие
-  voltFox:{name:'Волк — Редкий', rarity:'rare', click:1.20, auto:1.10},
-  lynx:{name:'Рысь — Редкая', rarity:'rare', click:1.22, auto:1.12},
-  panther:{name:'Пантера — Редкая', rarity:'rare', click:1.24, auto:1.14},
-  falcon:{name:'Сокол — Редкий', rarity:'rare', click:1.26, auto:1.16},
-  whiteTiger:{name:'Белый тигр — Редкий', rarity:'rare', click:1.30, auto:1.18},
+  voltFox:{name:'Волк', rarity:'rare', click:1.20, auto:1.10},
+  lynx:{name:'Рысь', rarity:'rare', click:1.22, auto:1.12},
+  panther:{name:'Пантера', rarity:'rare', click:1.24, auto:1.14},
+  falcon:{name:'Сокол', rarity:'rare', click:1.26, auto:1.16},
+  whiteTiger:{name:'Белый тигр', rarity:'rare', click:1.30, auto:1.18},
 
   // Эпические
-  glitchOwl:{name:'Феникс — Эпический', rarity:'epic', click:1.55, auto:1.35},
-  frostBear:{name:'Ледяной медведь — Эпический', rarity:'epic', click:1.60, auto:1.38},
-  shadowTiger:{name:'Теневой тигр — Эпический', rarity:'epic', click:1.65, auto:1.42},
-  griffin:{name:'Грифон — Эпический', rarity:'epic', click:1.72, auto:1.46},
-  thunderWolf:{name:'Грозовой волк — Эпический', rarity:'epic', click:1.80, auto:1.50},
+  glitchOwl:{name:'Феникс', rarity:'epic', click:1.55, auto:1.35},
+  frostBear:{name:'Ледяной медведь', rarity:'epic', click:1.60, auto:1.38},
+  shadowTiger:{name:'Теневой тигр', rarity:'epic', click:1.65, auto:1.42},
+  griffin:{name:'Грифон', rarity:'epic', click:1.72, auto:1.46},
+  thunderWolf:{name:'Грозовой волк', rarity:'epic', click:1.80, auto:1.50},
 
   // Легендарные
-  mechDragon:{name:'Дракон — Легендарный', rarity:'legendary', click:2.40, auto:2.00},
-  cerberus:{name:'Цербер — Легендарный', rarity:'legendary', click:2.55, auto:2.10},
-  thunderbird:{name:'Громовая птица — Легендарная', rarity:'legendary', click:2.70, auto:2.20},
-  leviathan:{name:'Левиафан — Легендарный', rarity:'legendary', click:2.85, auto:2.35},
-  fireLion:{name:'Огненный лев — Легендарный', rarity:'legendary', click:3.00, auto:2.50},
+  mechDragon:{name:'Дракон', rarity:'legendary', click:2.40, auto:2.00},
+  cerberus:{name:'Цербер', rarity:'legendary', click:2.55, auto:2.10},
+  thunderbird:{name:'Громовая птица', rarity:'legendary', click:2.70, auto:2.20},
+  leviathan:{name:'Левиафан', rarity:'legendary', click:2.85, auto:2.35},
+  fireLion:{name:'Огненный лев', rarity:'legendary', click:3.00, auto:2.50},
 
   // Мифические
-  starSeraph:{name:'Единорог — Мифический', rarity:'mythical', click:5.00, auto:4.00},
-  timeDragon:{name:'Дракон времени — Мифический', rarity:'mythical', click:5.50, auto:4.40},
-  cosmicLeviathan:{name:'Космический левиафан — Мифический', rarity:'mythical', click:6.00, auto:4.80},
-  celestialKitsune:{name:'Небесная кицунэ — Мифическая', rarity:'mythical', click:6.50, auto:5.20},
-  voidSeraph:{name:'Сераф Бездны — Мифический', rarity:'mythical', click:7.00, auto:5.75}
+  starSeraph:{name:'Единорог', rarity:'mythical', click:5.00, auto:4.00},
+  timeDragon:{name:'Дракон времени', rarity:'mythical', click:5.50, auto:4.40},
+  cosmicLeviathan:{name:'Космический левиафан', rarity:'mythical', click:6.00, auto:4.80},
+  celestialKitsune:{name:'Небесная кицунэ', rarity:'mythical', click:6.50, auto:5.20},
+  voidSeraph:{name:'Сераф Бездны', rarity:'mythical', click:7.00, auto:5.75}
 };
 
 const eggs = [
@@ -172,12 +172,43 @@ const defaultState = {
   bestReaction:null,
   bestTargetScore:0,
   achievements:{},
-  stats:{manualTaps:0,auraRolls:0,eggsOpened:0,bossesKilled:0,questsCompleted:0,miniGamesPlayed:0,playTime:0,rarestAuraOdds:0}
+  stats:{manualTaps:0,auraRolls:0,eggsOpened:0,bossesKilled:0,questsCompleted:0,miniGamesPlayed:0,playTime:0,rarestAuraOdds:0},
+  syncUpdatedAt:0
 };
 
 const clone = obj => JSON.parse(JSON.stringify(obj));
 
 let state = load();
+
+
+function normalizeCloudState(saved){
+  if(!saved || typeof saved!=='object')return clone(defaultState);
+  return {
+    ...clone(defaultState),
+    ...saved,
+    upgradeLevels:{...defaultState.upgradeLevels,...(saved.upgradeLevels||{})},
+    ownedAuras:Array.isArray(saved.ownedAuras)?saved.ownedAuras:[],
+    equippedPets:Array.isArray(saved.equippedPets)?saved.equippedPets:[],
+    auraLevels:{...defaultState.auraLevels,...(saved.auraLevels||{})},
+    lockedAuras:Array.isArray(saved.lockedAuras)?saved.lockedAuras:[],
+    favoriteAuras:Array.isArray(saved.favoriteAuras)?saved.favoriteAuras:[],
+    auraLuckLevel:Number(saved.auraLuckLevel||0),
+    rebirths:Number(saved.rebirths||0),souls:Number(saved.souls||0),
+    rebirthTree:{...defaultState.rebirthTree,...(saved.rebirthTree||{})},
+    autoRollUnlocked:Boolean(saved.autoRollUnlocked),autoRoll:Boolean(saved.autoRoll),autoSkipOdds:Number(saved.autoSkipOdds||128),
+    luckBoosts:{...defaultState.luckBoosts,...(saved.luckBoosts||{})},luckBoostMult:Number(saved.luckBoostMult||1),luckBoostEnd:Number(saved.luckBoostEnd||0),
+    daily:{...defaultState.daily,...(saved.daily||{})},boss:{...defaultState.boss,...(saved.boss||{})},
+    activeEvent:saved.activeEvent||null,eventEnd:Number(saved.eventEnd||0),nextEventAt:Number(saved.nextEventAt||0),
+    questClaims:{...defaultState.questClaims,...(saved.questClaims||{})},indexRewards:{...defaultState.indexRewards,...(saved.indexRewards||{})},
+    bestReaction:saved.bestReaction??null,bestTargetScore:Number(saved.bestTargetScore||0),
+    energyMaxLevel:Number(saved.energyMaxLevel||0),energyRegenLevel:Number(saved.energyRegenLevel||0),
+    energy:Number(saved.energy??100),maxEnergy:Number(saved.maxEnergy||100),energyRegen:Number(saved.energyRegen&&saved.energyRegen!==8?saved.energyRegen:2),
+    stats:{...defaultState.stats,...(saved.stats||{})},
+    petInventory:(Array.isArray(saved.petInventory)?saved.petInventory:[]).map(p=>({...p,stage:p.stage||'normal'})),
+    achievements:{...defaultState.achievements,...(saved.achievements||{})},
+    syncUpdatedAt:Number(saved.syncUpdatedAt||0)
+  };
+}
 
 function load(){
   try{
@@ -221,14 +252,80 @@ function load(){
       energyRegen: Number(saved.energyRegen && saved.energyRegen !== 8 ? saved.energyRegen : 2),
       stats: {...defaultState.stats, ...(saved.stats || {})},
       petInventory: (Array.isArray(saved.petInventory) ? saved.petInventory : []).map(p=>({...p,stage:p.stage||'normal'})),
-      achievements: {...defaultState.achievements, ...(saved.achievements || {})}
+      achievements: {...defaultState.achievements, ...(saved.achievements || {})},
+      syncUpdatedAt: Number(saved.syncUpdatedAt || 0)
     };
   }catch(err){
     console.warn('Save load error:', err);
     return clone(defaultState);
   }
 }
-function save(){ localStorage.setItem('neonClickerSave', JSON.stringify(state)); }
+const CLOUD_META_KEY='neon_save_meta_v1';
+const CLOUD_PART_PREFIX='neon_save_part_';
+const CLOUD_PART_SIZE=3000;
+let cloudReady=false;
+let cloudBooting=false;
+let cloudTimer=null;
+let cloudWriting=false;
+let cloudWriteAgain=false;
+
+function tgApp(){return window.Telegram?.WebApp||null;}
+function inTelegram(){return Boolean(tgApp()?.CloudStorage&&tgApp()?.initDataUnsafe?.user?.id);}
+function tgUserName(){
+  const u=tgApp()?.initDataUnsafe?.user;if(!u)return 'Локальное сохранение';
+  const full=[u.first_name,u.last_name].filter(Boolean).join(' ').trim();
+  return u.username?`${full||'Telegram'} • @${u.username}`:(full||`Telegram ID ${u.id}`);
+}
+function syncUi(mode,text){
+  const c=document.getElementById('telegramAccountCard'),n=document.getElementById('telegramAccountName'),s=document.getElementById('telegramSyncStatus'),b=document.getElementById('telegramSyncBtn');
+  if(!c)return;c.classList.remove('cloud','syncing','error');if(mode)c.classList.add(mode);if(n)n.textContent=tgUserName();if(s)s.textContent=text||'';if(b)b.disabled=mode==='syncing'||!inTelegram();
+}
+function cloudGet(key){return new Promise((res,rej)=>{try{tgApp().CloudStorage.getItem(key,(e,v)=>e?rej(e):res(v||''));}catch(e){rej(e);}});}
+function cloudGets(keys){return new Promise((res,rej)=>{try{tgApp().CloudStorage.getItems(keys,(e,v)=>e?rej(e):res(v||{}));}catch(e){rej(e);}});}
+function cloudSet(key,value){return new Promise((res,rej)=>{try{tgApp().CloudStorage.setItem(key,value,(e,v)=>e?rej(e):res(v));}catch(e){rej(e);}});}
+function cloudRemove(keys){return new Promise((res,rej)=>{if(!keys.length)return res(true);try{tgApp().CloudStorage.removeItems(keys,(e,v)=>e?rej(e):res(v));}catch(e){rej(e);}});}
+
+async function readCloudSave(){
+  if(!inTelegram())return null;
+  const raw=await cloudGet(CLOUD_META_KEY);if(!raw)return null;
+  let meta;try{meta=JSON.parse(raw);}catch{return null;}
+  const count=Math.max(0,Math.min(100,Number(meta.chunks)||0));if(!count)return null;
+  const keys=Array.from({length:count},(_,i)=>CLOUD_PART_PREFIX+i),vals=await cloudGets(keys);
+  let text='';for(const k of keys){if(typeof vals[k]!=='string')return null;text+=vals[k];}
+  try{const obj=JSON.parse(text);if(!obj.syncUpdatedAt)obj.syncUpdatedAt=Number(meta.updatedAt||0);return normalizeCloudState(obj);}catch(e){console.warn('cloud parse',e);return null;}
+}
+async function writeCloudSave(){
+  if(!cloudReady||!inTelegram())return false;if(cloudWriting){cloudWriteAgain=true;return false;}cloudWriting=true;cloudWriteAgain=false;syncUi('syncing','Сохранение в Telegram…');
+  try{
+    const text=JSON.stringify(state),parts=[];for(let i=0;i<text.length;i+=CLOUD_PART_SIZE)parts.push(text.slice(i,i+CLOUD_PART_SIZE));
+    let oldCount=0;try{oldCount=Number(JSON.parse((await cloudGet(CLOUD_META_KEY))||'{}').chunks)||0;}catch{}
+    for(let i=0;i<parts.length;i++)await cloudSet(CLOUD_PART_PREFIX+i,parts[i]);
+    await cloudSet(CLOUD_META_KEY,JSON.stringify({v:1,chunks:parts.length,updatedAt:state.syncUpdatedAt}));
+    if(oldCount>parts.length)await cloudRemove(Array.from({length:oldCount-parts.length},(_,j)=>CLOUD_PART_PREFIX+(parts.length+j))).catch(()=>{});
+    syncUi('cloud','Сохранено в Telegram');return true;
+  }catch(e){console.warn('cloud write',e);syncUi('error','Ошибка синхронизации • нажми ↻');return false;}
+  finally{cloudWriting=false;if(cloudWriteAgain){cloudWriteAgain=false;queueCloudSave(700);}}
+}
+function queueCloudSave(delay=2200){if(!cloudReady||!inTelegram()||cloudTimer)return;cloudTimer=setTimeout(async()=>{cloudTimer=null;await writeCloudSave();},delay);}
+function save(){if(!inTelegram()||cloudReady)state.syncUpdatedAt=Date.now();localStorage.setItem('neonClickerSave',JSON.stringify(state));if(cloudReady)queueCloudSave();}
+
+async function syncTelegramAccount(forceUpload=false){
+  if(!inTelegram()){cloudReady=false;syncUi('','Локальный режим • облако включится при запуске из Telegram-бота');return;}
+  syncUi('syncing','Синхронизация…');
+  try{
+    const cloud=await readCloudSave(),localTs=Number(state.syncUpdatedAt||0),cloudTs=Number(cloud?.syncUpdatedAt||0);
+    if(cloud&&!forceUpload&&cloudTs>localTs){state=normalizeCloudState(cloud);localStorage.setItem('neonClickerSave',JSON.stringify(state));applyAura();render();syncUi('cloud','Прогресс загружен из Telegram');cloudReady=true;}
+    else{if(!state.syncUpdatedAt)state.syncUpdatedAt=Date.now();localStorage.setItem('neonClickerSave',JSON.stringify(state));cloudReady=true;await writeCloudSave();}
+  }catch(e){console.warn('cloud sync',e);cloudReady=true;syncUi('error','Не удалось синхронизировать • нажми ↻');}
+}
+async function clearCloudSave(){
+  if(!inTelegram())return;try{let count=0;try{count=Number(JSON.parse((await cloudGet(CLOUD_META_KEY))||'{}').chunks)||0;}catch{}await cloudRemove([CLOUD_META_KEY,...Array.from({length:count},(_,i)=>CLOUD_PART_PREFIX+i)]);}catch(e){console.warn('cloud clear',e);}
+}
+async function initTelegramAccount(){
+  if(!inTelegram()){syncUi('','Локальный режим • через Telegram один аккаунт будет работать на разных устройствах');return;}
+  if(cloudBooting)return;cloudBooting=true;try{tgApp().ready();tgApp().expand();}catch{}await syncTelegramAccount(false);cloudBooting=false;
+}
+
 
 function haptic(type='light'){
   try{
@@ -514,8 +611,12 @@ function toggleAutoRoll(){
 
 function applyAura(){
   const a=auras.find(x=>x.id===state.equippedAura);
-  document.documentElement.style.setProperty('--accent',a?.accent||'#00eaff');
-  document.documentElement.style.setProperty('--accent2',a?.accent2||'#9b5cff');
+  // Интерфейс всегда остаётся одного цвета.
+  // Экипированная аура меняет только кольцо/свечение вокруг кнопки.
+  document.documentElement.style.setProperty('--aura-accent',a?.accent||'#00eaff');
+  document.documentElement.style.setProperty('--aura-accent2',a?.accent2||'#7a5cff');
+  document.documentElement.style.setProperty('--accent','#00eaff');
+  document.documentElement.style.setProperty('--accent2','#7a5cff');
 }
 
 function roll(chances){
@@ -701,10 +802,8 @@ function renderPets(){
     const click=1+(p.click-1)*boost*stageBoost, auto=1+(p.auto-1)*boost*stageBoost;
     const d=document.createElement('div'); d.className='pet '+(equipped?'equipped':'');
     d.innerHTML=`
-      <span class="badge" style="color:${rarity[p.rarity].color}">${rarity[p.rarity].name}</span>
-      <span class="badge stage-badge">${PET_STAGES[stage].name}</span>
       <h3>${p.name} <span class="small">ур.${entry.level}</span></h3>
-      <p class="small">Тап x${click.toFixed(2)} • Авто x${auto.toFixed(2)} • Stage x${stageBoost}</p>
+      <p class="small">Тап x${click.toFixed(2)} • Авто x${auto.toFixed(2)}${stage!=='normal'?` • ${PET_STAGES[stage].name} x${stageBoost}`:''}</p>
       <button class="primary">${equipped?'Снять':'Экипировать'}</button>
       <button class="primary fuse">Слияние уровня</button>
       <button class="primary evolve">Эволюция</button>
@@ -1048,6 +1147,7 @@ function renderStats(){
 function render(){
   renderTop();renderUpgrades();renderAuras();renderEggs();renderPets();renderRebirth();renderMinigames();renderAuraLuck();renderAuraIndex();
   renderAutoRoll();renderBoosts();renderEnergyUpgrades();renderSoulTree();renderQuests();renderDaily();renderBoss();renderEvents();renderStats();
+  if(!document.getElementById('adminBackdrop')?.classList.contains('hidden'))renderAdminPanel();
 }
 
 function fastPress(id, handler){
@@ -1125,4 +1225,157 @@ document.addEventListener('visibilitychange',()=>{
 });
 window.addEventListener('pagehide',save);
 
+
+// ===== Hidden developer / admin console =====
+// Маскировка: 7 быстрых нажатий по заголовку "Профиль мощности".
+let adminTapTimes=[];
+
+const ADMIN_PASSWORD_HASH=3125142316; // FNV-1a hash, password is not stored as plain text.
+
+function adminHash(value){
+  let h=0x811c9dc5;
+  for(let i=0;i<value.length;i++){
+    h^=value.charCodeAt(i);
+    h=Math.imul(h,0x01000193)>>>0;
+  }
+  return h>>>0;
+}
+
+function openAdminGate(){
+  const gate=document.getElementById('adminGate');
+  const input=document.getElementById('adminPasswordInput');
+  if(!gate||!input)return;
+  input.value='';
+  gate.classList.remove('hidden');
+  setTimeout(()=>input.focus(),60);
+  haptic('light');
+}
+function closeAdminGate(){
+  document.getElementById('adminGate')?.classList.add('hidden');
+  const input=document.getElementById('adminPasswordInput');
+  if(input)input.value='';
+}
+function tryAdminPassword(){
+  const input=document.getElementById('adminPasswordInput');
+  const box=document.querySelector('.admin-gate-box');
+  if(!input)return;
+
+  if(adminHash(input.value)===ADMIN_PASSWORD_HASH){
+    closeAdminGate();
+    openAdminPanel();
+    return;
+  }
+
+  input.value='';
+  box?.classList.remove('wrong');
+  void box?.offsetWidth;
+  box?.classList.add('wrong');
+  haptic('heavy');
+  setTimeout(()=>input.focus(),30);
+}
+
+function openAdminPanel(){
+  const b=document.getElementById('adminBackdrop');
+  if(!b)return;
+  b.classList.remove('hidden');
+  renderAdminPanel();
+  haptic('success');
+}
+function closeAdminPanel(){
+  document.getElementById('adminBackdrop')?.classList.add('hidden');
+}
+function renderAdminPanel(){
+  const set=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value;};
+  set('adminClicks',fmt(state.clicks));
+  set('adminCrystals',fmt(state.crystals));
+  set('adminSouls',fmt(state.souls));
+  set('adminEnergy',`${Math.floor(state.energy)} / ${state.maxEnergy}`);
+}
+function adminAddAllPets(){
+  Object.keys(pets).forEach(petId=>{
+    if(!state.petInventory.some(p=>p.petId===petId)){
+      const uid=(window.crypto&&typeof window.crypto.randomUUID==='function')
+        ? window.crypto.randomUUID()
+        : Date.now()+'_'+Math.random().toString(36).slice(2);
+      state.petInventory.push({uid,petId,level:1,stage:'normal'});
+    }
+  });
+}
+function adminOpenAllAuras(){
+  auras.forEach(a=>{
+    if(!state.ownedAuras.includes(a.id))state.ownedAuras.push(a.id);
+    if(!state.auraLevels[a.id])state.auraLevels[a.id]=1;
+  });
+}
+function adminAction(action){
+  switch(action){
+    case 'clicks': state.clicks+=1_000_000;break;
+    case 'crystals': state.crystals+=100;break;
+    case 'souls': state.souls+=10;break;
+    case 'energy': state.energy=maxEnergyValue();break;
+    case 'luck': state.auraLuckLevel++;break;
+    case 'rebirth': state.rebirths++;state.souls++;break;
+    case 'auras': adminOpenAllAuras();break;
+    case 'pets': adminAddAllPets();break;
+    case 'boosts':
+      state.luckBoosts.x2+=10;state.luckBoosts.x5+=5;state.luckBoosts.x10+=3;
+      break;
+    case 'boss': state.boss.cooldownUntil=0;state.boss.active=false;break;
+  }
+  addLog(`Service Console: ${action}`);
+  render();renderAdminPanel();save();
+}
+
+function installAdminConsole(){
+  const title=document.getElementById('profilePowerTitle');
+  if(title){
+    title.addEventListener('pointerup',()=>{
+      const now=Date.now();
+      adminTapTimes=adminTapTimes.filter(t=>now-t<2800);
+      adminTapTimes.push(now);
+      if(adminTapTimes.length>=7){
+        adminTapTimes=[];
+        openAdminGate();
+      }
+    });
+  }
+
+  document.getElementById('adminGateClose')?.addEventListener('click',closeAdminGate);
+  document.getElementById('adminGateSubmit')?.addEventListener('click',tryAdminPassword);
+  document.getElementById('adminPasswordInput')?.addEventListener('keydown',e=>{
+    if(e.key==='Enter')tryAdminPassword();
+    if(e.key==='Escape')closeAdminGate();
+  });
+  document.getElementById('adminGate')?.addEventListener('click',e=>{
+    if(e.target.id==='adminGate')closeAdminGate();
+  });
+
+  document.getElementById('telegramSyncBtn')?.addEventListener('click',()=>syncTelegramAccount(false));
+  document.getElementById('adminClose')?.addEventListener('click',closeAdminPanel);
+  document.getElementById('adminBackdrop')?.addEventListener('click',e=>{
+    if(e.target.id==='adminBackdrop')closeAdminPanel();
+  });
+
+  document.querySelectorAll('[data-admin]').forEach(btn=>{
+    btn.addEventListener('click',()=>adminAction(btn.dataset.admin));
+  });
+
+  document.getElementById('adminApplyClicks')?.addEventListener('click',()=>{
+    const n=Number(document.getElementById('adminSetClicks')?.value);
+    if(Number.isFinite(n)&&n>=0){
+      state.clicks=n;
+      render();renderAdminPanel();save();
+    }
+  });
+
+  document.getElementById('adminResetSave')?.addEventListener('click',async()=>{
+    if(!confirm('Полностью удалить сохранение Neon Clicker на устройстве и в Telegram?'))return;
+    await clearCloudSave();localStorage.removeItem('neonClickerSave');location.reload();
+  });
+}
+
+installAdminConsole();
 applyAura(); render();
+initTelegramAccount();
+window.addEventListener('pagehide',()=>{localStorage.setItem('neonClickerSave',JSON.stringify(state));if(cloudReady)writeCloudSave();});
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'){localStorage.setItem('neonClickerSave',JSON.stringify(state));if(cloudReady)writeCloudSave();}});

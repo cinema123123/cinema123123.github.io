@@ -4,8 +4,18 @@
   --panel2:#151a35;
   --text:#f5f7ff;
   --muted:#8e9abb;
-  --accent:#00eaff;
-  --accent2:#9b5cff;
+
+  /* Постоянный цвет интерфейса */
+  --ui-accent:#00eaff;
+  --ui-accent2:#7a5cff;
+
+  /* Аура меняет только своё кольцо */
+  --aura-accent:#00eaff;
+  --aura-accent2:#7a5cff;
+
+  /* Совместимость со старым CSS */
+  --accent:var(--ui-accent);
+  --accent2:var(--ui-accent2);
   --danger:#ff4d7d;
   --good:#5dff9a;
   --glow:0 0 18px color-mix(in srgb, var(--accent) 65%, transparent);
@@ -66,8 +76,8 @@ button{font:inherit}
 .aura-ring{
   width:260px;height:260px;border-radius:50%;position:absolute;
   pointer-events:none;
-  border:3px solid color-mix(in srgb,var(--accent) 72%,transparent);
-  box-shadow:0 0 24px color-mix(in srgb,var(--accent) 70%,transparent),inset 0 0 24px color-mix(in srgb,var(--accent) 32%,transparent);
+  border:3px solid color-mix(in srgb,var(--aura-accent) 72%,transparent);
+  box-shadow:0 0 24px color-mix(in srgb,var(--aura-accent) 70%,transparent),inset 0 0 24px color-mix(in srgb,var(--aura-accent) 32%,transparent);
   animation:ringGlow 2s ease-in-out infinite;
   aspect-ratio:1 / 1;
 }
@@ -603,3 +613,205 @@ body {
   .index-rewards{grid-template-columns:repeat(2,1fr)}.quest-grid,.achievement-grid,.progress-grid,.soul-tree,.stats-grid{grid-template-columns:1fr 1fr}.boost-buttons{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:390px){.quest-grid,.achievement-grid,.progress-grid,.soul-tree,.stats-grid{grid-template-columns:1fr}.index-rewards{grid-template-columns:1fr 1fr}}
+
+/* ===== FIXED COLOR THEME ===== */
+.topbar,
+.card,
+.item,
+.metric,
+.tabs,
+.game-card,
+.auto-roll-card,
+.quest-card,
+.tree-node,
+.aura-index-card,
+.index-reward{
+  --accent:var(--ui-accent);
+  --accent2:var(--ui-accent2);
+}
+
+.tab.active,
+.primary,
+.item button:not(.danger),
+.tree-node button,
+.quest-card button,
+.index-reward button{
+  border-color:var(--ui-accent)!important;
+}
+
+.primary,
+.item button:not(.danger),
+.tree-node button,
+.quest-card button,
+.index-reward button{
+  background:linear-gradient(90deg,var(--ui-accent2),var(--ui-accent))!important;
+}
+
+.energy-fill,
+.index-progress>div,
+.aura-index-progress>div,
+.mini-progress i{
+  background:linear-gradient(90deg,var(--ui-accent2),var(--ui-accent))!important;
+}
+
+.click-btn{
+  background:
+    radial-gradient(circle at 35% 30%,rgba(255,255,255,.22),transparent 20%),
+    linear-gradient(145deg,var(--ui-accent2),var(--ui-accent))!important;
+  box-shadow:0 0 26px color-mix(in srgb,var(--ui-accent) 70%,transparent),
+             inset 0 0 30px rgba(255,255,255,.16)!important;
+}
+
+.aura-ring{
+  border-color:color-mix(in srgb,var(--aura-accent) 72%,transparent)!important;
+  box-shadow:
+    0 0 24px color-mix(in srgb,var(--aura-accent) 72%,transparent),
+    inset 0 0 24px color-mix(in srgb,var(--aura-accent) 32%,transparent)!important;
+}
+
+/* ===== HIDDEN ADMIN PANEL ===== */
+.admin-backdrop{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(3,4,10,.82);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+.admin-panel{
+  width:min(560px,100%);
+  max-height:82dvh;
+  overflow:auto;
+  border-radius:22px;
+  padding:18px;
+  background:linear-gradient(180deg,#11162c,#090c19);
+  border:1px solid rgba(0,234,255,.28);
+  box-shadow:0 0 40px rgba(0,234,255,.12);
+}
+.admin-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.admin-head h2{margin:0}
+.admin-close{
+  width:42px;height:42px;border:0;border-radius:11px;
+  background:#202642;color:#fff;font-size:18px;
+}
+.admin-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:9px;
+  margin-top:14px;
+}
+.admin-action{
+  min-height:48px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:11px;
+  background:linear-gradient(90deg,#30365e,#1c9bbb);
+  color:#fff;
+  font-weight:800;
+}
+.admin-danger{
+  background:linear-gradient(90deg,#6c1830,#a92545)!important;
+}
+.admin-input{
+  width:100%;
+  margin-top:8px;
+  min-height:44px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;
+  background:#0c1022;
+  color:#fff;
+  padding:9px 10px;
+}
+.admin-note{
+  color:var(--muted);
+  font-size:11px;
+  margin-top:10px;
+}
+@media(max-width:480px){
+  .admin-grid{grid-template-columns:1fr}
+}
+
+/* ===== ADMIN PASSWORD GATE ===== */
+.admin-gate{
+  position:fixed;
+  inset:0;
+  z-index:10001;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(3,4,10,.88);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.admin-gate-box{
+  width:min(300px,86vw);
+  padding:14px;
+  border-radius:18px;
+  background:#0b0e1b;
+  border:1px solid rgba(0,234,255,.22);
+  box-shadow:0 0 34px rgba(0,234,255,.10);
+}
+.admin-password-input{
+  box-sizing:border-box;
+  width:100%;
+  height:50px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.12);
+  outline:none;
+  background:#070914;
+  color:#fff;
+  text-align:center;
+  font-size:21px;
+  letter-spacing:.18em;
+  padding:0 12px;
+  transition:border-color .15s,box-shadow .15s,transform .15s;
+}
+.admin-password-input:focus{
+  border-color:rgba(0,234,255,.65);
+  box-shadow:0 0 18px rgba(0,234,255,.10);
+}
+.admin-gate-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:9px;
+}
+.admin-gate-actions button{
+  height:42px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;
+  background:#12172a;
+  color:#fff;
+  font-size:21px;
+  font-weight:900;
+}
+.admin-gate-actions button:last-child{
+  background:linear-gradient(90deg,var(--ui-accent2),var(--ui-accent));
+}
+.admin-gate-box.wrong{
+  animation:adminWrong .25s linear;
+}
+.admin-gate-box.wrong .admin-password-input{
+  border-color:#ff3158;
+  box-shadow:0 0 18px rgba(255,49,88,.18);
+}
+@keyframes adminWrong{
+  0%,100%{transform:translateX(0)}
+  25%{transform:translateX(-7px)}
+  75%{transform:translateX(7px)}
+}
+
+/* ===== TELEGRAM CLOUD ACCOUNT ===== */
+.telegram-account{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 12px;padding:10px 11px;border:1px solid rgba(255,255,255,.07);border-radius:13px;background:rgba(255,255,255,.03)}
+.telegram-account-main{display:flex;align-items:center;gap:9px;min-width:0}.telegram-account-main>div{min-width:0}.telegram-account-main b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px}.telegram-account-main span:not(.telegram-dot){display:block;margin-top:2px;color:var(--muted);font-size:10px;line-height:1.25}
+.telegram-dot{width:9px;height:9px;border-radius:50%;background:#6f7893;box-shadow:0 0 10px rgba(111,120,147,.55);flex:0 0 9px}.telegram-account.cloud .telegram-dot{background:#45f29a;box-shadow:0 0 12px rgba(69,242,154,.75)}.telegram-account.syncing .telegram-dot{background:var(--ui-accent);box-shadow:0 0 12px rgba(0,234,255,.75);animation:tgPulse .8s ease-in-out infinite alternate}.telegram-account.error .telegram-dot{background:#ff526d;box-shadow:0 0 12px rgba(255,82,109,.7)}@keyframes tgPulse{from{opacity:.4}to{opacity:1}}
+#telegramSyncBtn{width:38px;height:38px;flex:0 0 38px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:#151a31;color:#fff;font-size:18px;font-weight:900}#telegramSyncBtn:disabled{opacity:.4}

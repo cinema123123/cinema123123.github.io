@@ -13,6 +13,62 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+
+<div id="adminGate" class="admin-gate hidden">
+  <div class="admin-gate-box">
+    <input id="adminPasswordInput" class="admin-password-input" type="password"
+           inputmode="text" autocomplete="off" autocapitalize="off"
+           spellcheck="false" aria-label="Пароль">
+    <div class="admin-gate-actions">
+      <button type="button" id="adminGateClose">×</button>
+      <button type="button" id="adminGateSubmit">→</button>
+    </div>
+  </div>
+</div>
+
+<div id="adminBackdrop" class="admin-backdrop hidden">
+  <div class="admin-panel">
+    <div class="admin-head">
+      <div>
+        <div class="badge">SERVICE CONSOLE</div>
+        <h2>Диагностика системы</h2>
+      </div>
+      <button type="button" class="admin-close" id="adminClose">✕</button>
+    </div>
+
+    <p class="small">Скрытая панель разработчика.</p>
+
+    <div class="metric-grid">
+      <div class="metric"><span>Клики</span><b id="adminClicks">0</b></div>
+      <div class="metric"><span>Кристаллы</span><b id="adminCrystals">0</b></div>
+      <div class="metric"><span>Souls</span><b id="adminSouls">0</b></div>
+      <div class="metric"><span>Энергия</span><b id="adminEnergy">0</b></div>
+    </div>
+
+    <div class="admin-grid">
+      <button class="admin-action" data-admin="clicks">+1M кликов</button>
+      <button class="admin-action" data-admin="crystals">+100 кристаллов</button>
+      <button class="admin-action" data-admin="souls">+10 Souls</button>
+      <button class="admin-action" data-admin="energy">Полная энергия</button>
+      <button class="admin-action" data-admin="luck">+1 уровень Luck</button>
+      <button class="admin-action" data-admin="rebirth">+1 перерождение</button>
+      <button class="admin-action" data-admin="auras">Открыть все ауры</button>
+      <button class="admin-action" data-admin="pets">Добавить всех питомцев</button>
+      <button class="admin-action" data-admin="boosts">Выдать Luck Boosts</button>
+      <button class="admin-action" data-admin="boss">Сбросить КД босса</button>
+    </div>
+
+    <label class="small">Установить количество кликов</label>
+    <input id="adminSetClicks" class="admin-input" type="number" min="0" placeholder="Например: 100000000">
+    <button class="admin-action" id="adminApplyClicks" style="width:100%;margin-top:8px">Применить</button>
+
+    <button class="admin-action admin-danger" id="adminResetSave" style="width:100%;margin-top:12px">Сбросить сохранение</button>
+
+    <p class="admin-note">Панель скрыта из обычной навигации. В клиентском HTML это не является настоящей защитой: пользователь с доступом к исходному коду может её найти.</p>
+  </div>
+</div>
+
 <div id="rareFlash" class="rare-flash"></div>
 <div class="app">
   <div class="topbar">
@@ -38,7 +94,18 @@
     </section>
 
     <section class="card">
-      <h2 style="margin-top:0">Профиль мощности</h2>
+      <h2 style="margin-top:0" id="profilePowerTitle">Профиль мощности</h2>
+
+      <div class="telegram-account" id="telegramAccountCard">
+        <div class="telegram-account-main">
+          <span class="telegram-dot"></span>
+          <div>
+            <b id="telegramAccountName">Локальное сохранение</b>
+            <span id="telegramSyncStatus">Проверка Telegram…</span>
+          </div>
+        </div>
+        <button type="button" id="telegramSyncBtn" aria-label="Синхронизировать">↻</button>
+      </div>
       <div class="metric-grid">
         <div class="metric"><span class="small">Базовая сила</span><b id="basePower">1</b></div>
         <div class="metric"><span class="small">Аура</span><b id="auraMult">x1</b></div>
@@ -216,6 +283,7 @@
   </section>
 
 </div>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="app.js" defer></script>
 <script>if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(console.error));</script>
 </body></html>
