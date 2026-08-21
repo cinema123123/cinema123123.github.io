@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
-<meta name="theme-color" content="#070914">
+<meta name="theme-color" content="#050817">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Neon Clicker">
-<title>Neon Clicker</title>
+<title>Neon Clicker: Cyber Simulator</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="stylesheet" href="styles.css">
@@ -71,20 +71,34 @@
 
 <div id="rareFlash" class="rare-flash"></div>
 <div class="app">
+  <header class="game-header">
+    <div class="brand-mark"><span></span><b>N</b></div>
+    <div class="brand-copy"><span>CYBER SIMULATOR</span><h1>NEON CLICKER</h1></div>
+    <div class="live-status"><i></i><span>SYSTEM ONLINE</span></div>
+  </header>
   <div class="topbar">
-    <div class="stat"><span>Клики</span><b id="clicks">0</b></div>
-    <div class="stat"><span>Кристаллы</span><b id="crystals">0</b></div>
-    <div class="stat"><span>За тап</span><b id="perClick">1</b></div>
-    <div class="stat"><span>В секунду</span><b id="perSec">0</b></div>
-    <div class="stat"><span>Перерождения</span><b id="rebirths">0</b></div>
-    <div class="stat"><span>Энергия</span><b id="energyTop">100 / 100</b></div>
+    <div class="stat"><i>⚡</i><span>Клики</span><b id="clicks">0</b></div>
+    <div class="stat"><i>💎</i><span>Кристаллы</span><b id="crystals">0</b></div>
+    <div class="stat"><i>👆</i><span>За тап</span><b id="perClick">1</b></div>
+    <div class="stat"><i>🤖</i><span>В секунду</span><b id="perSec">0</b></div>
+    <div class="stat"><i>♻️</i><span>Перерождения</span><b id="rebirths">0</b></div>
+    <div class="stat"><i>🔋</i><span>Энергия</span><b id="energyTop">100 / 100</b></div>
   </div>
+
+  <section class="command-center">
+    <div class="rank-panel">
+      <div class="rank-emblem" id="rankIcon">◈</div><div><span>NEON RANK</span><h2 id="rankName">Новичок</h2><small id="rankBonus">Бонус дохода x1.00</small></div>
+    </div>
+    <div class="rank-track"><div><span>Прогресс ранга</span><b id="rankProgressText">0 / 2</b></div><div class="rank-bar"><i id="rankProgressFill"></i></div></div>
+    <div class="command-metrics"><div><span>Текущий мир</span><b id="dashboardWorld">Neon City</b></div><div><span>Следующий этап</span><b id="dashboardNext">1 перерождение</b></div></div>
+    <div class="quick-actions"><button data-quick-tab="worlds">🌀 Миры</button><button data-quick-tab="rebirth">♻️ Rebirth</button><button data-quick-tab="missions">🎯 Задания</button></div>
+  </section>
 
   <div class="hero">
     <section class="card click-zone" id="clickZone">
       <div class="click-core">
         <div class="aura-ring" id="auraRing"></div>
-        <button type="button" class="click-btn" id="clickButton" aria-label="Сделать клик">КЛИК</button>
+        <button type="button" class="click-btn" id="clickButton" aria-label="Сделать клик"><span>⚡</span> ИМПУЛЬС</button>
       </div>
       <div class="energy-wrap">
         <div class="energy-row"><span>⚡ Энергия</span><b id="energyText">100 / 100</b></div>
@@ -122,17 +136,18 @@
   </div>
 
   <div class="tabs">
-    <button class="tab active" data-tab="clickShop">Клики</button>
-    <button class="tab" data-tab="auraShop">Ауры</button>
-    <button class="tab" data-tab="auraIndex">Индекс аур</button>
-    <button class="tab" data-tab="eggShop">Яйца питомцев</button>
-    <button class="tab" data-tab="pets">Питомцы</button>
-    <button class="tab" data-tab="rebirth">Перерождение</button>
-    <button class="tab" data-tab="minigames">Мини-игры</button>
-    <button class="tab" data-tab="missions">Задания</button>
-    <button class="tab" data-tab="progression">Прогресс</button>
-    <button class="tab" data-tab="boss">Босс</button>
-    <button class="tab" data-tab="stats">Статистика</button>
+    <button class="tab active" data-tab="clickShop">⚡ Клики</button>
+    <button class="tab" data-tab="auraShop">🎲 Ауры</button>
+    <button class="tab" data-tab="auraIndex">📖 Индекс</button>
+    <button class="tab" data-tab="eggShop">🥚 Яйца</button>
+    <button class="tab" data-tab="pets">🐾 Питомцы</button>
+    <button class="tab" data-tab="worlds">🌀 Миры</button>
+    <button class="tab" data-tab="rebirth">♻️ Rebirth</button>
+    <button class="tab" data-tab="minigames">🎮 Игры</button>
+    <button class="tab" data-tab="missions">🎯 Задания</button>
+    <button class="tab" data-tab="progression">💠 Прогресс</button>
+    <button class="tab" data-tab="boss">👹 Босс</button>
+    <button class="tab" data-tab="stats">📊 Статы</button>
   </div>
 
   <section id="clickShop" class="panel">
@@ -150,35 +165,36 @@
         <div class="metric"><span class="small">Уровень</span><b id="auraLuckLevel">0</b></div>
         <div class="metric"><span class="small">Удача</span><b id="auraLuckMult">x1.00</b></div>
         <div class="metric"><span class="small">RNG-попытки</span><b id="auraLuckRolls">1 гарант.</b></div>
-        <div class="metric"><span class="small">Цена</span><b id="auraLuckCost">5K</b></div>
+        <div class="metric"><span class="small">Цена</span><b id="auraLuckCost">2K</b></div>
       </div>
       <button class="primary" id="auraLuckBtn">Прокачать удачу</button>
       <p class="small">
         Каждая дополнительная RNG-попытка роллит ауру ещё раз, а игра оставляет самый редкий результат.
-        Поэтому базовые шансы 1/2, 1/4, 1/8, 1/16… остаются настоящими.
+        Шанс 1/N означает вероятность получить эту ауру или более редкую.
       </p>
     </div>
 
     <div class="card" style="margin-bottom:12px">
       <div class="section-title">
         <h2>RNG аур</h2>
-        <span class="badge">1/2 → 1/1 073 741 824</span>
+        <span class="badge">1/2 → 1/5 000 000</span>
       </div>
       
 <div class="rng-ladder">
   <div class="rng-chip"><b>1/2</b><span>Неоновый контур</span></div>
-  <div class="rng-chip"><b>1/4</b><span>Искра мегаполиса</span></div>
-  <div class="rng-chip"><b>1/8</b><span>Кислотный след</span></div>
-  <div class="rng-chip"><b>1/16</b><span>Розовый импульс</span></div>
-  <div class="rng-chip"><b>1/32</b><span>Стальной резонанс</span></div>
-  <div class="rng-chip"><b>1/64</b><span>Угольный заряд</span></div>
+  <div class="rng-chip"><b>1/3</b><span>Искра мегаполиса</span></div>
+  <div class="rng-chip"><b>1/5</b><span>Кислотный след</span></div>
+  <div class="rng-chip"><b>1/8</b><span>Розовый импульс</span></div>
+  <div class="rng-chip"><b>1/12</b><span>Стальной резонанс</span></div>
+  <div class="rng-chip"><b>1/18</b><span>Угольный заряд</span></div>
 </div>
 
 <div class="rng-box">
         <div class="rng-result" id="auraRollResult">Нажми «Крутить ауру»</div>
         <button class="primary" id="rollAuraBtn" style="width:auto;min-width:190px">Крутить за 500 кликов</button>
+        <div class="multi-roll-actions"><button class="primary" id="rollAura5Btn">x5 • 2 500</button><button class="primary" id="rollAura10Btn">x10 • 5 000</button></div>
       </div>
-      <p class="small">34 ауры: от 1/2 до 1/17 179 869 184. Дубликат повышает уровень.</p>
+      <p class="small">34 ауры: от 1/2 до 1/5 000 000. Дубликат повышает уровень.</p>
       <div class="auto-roll-card">
         <div><b>🤖 Auto Roll</b><span class="small">1 ролл/сек, стоимость каждого ролла 500 кликов</span></div>
         <button class="primary" id="autoRollUnlockBtn">Открыть Auto Roll за 20 💎</button>
@@ -188,6 +204,11 @@
           <option value="2">1/2</option><option value="8">1/8</option><option value="128" selected>1/128</option>
           <option value="2048">1/2 048</option><option value="32768">1/32 768</option><option value="1048576">1/1 048 576</option>
         </select>
+      </div>
+
+      <div class="rng-extra-grid">
+        <div><div class="section-title"><h3>🏁 RNG Milestones</h3></div><div id="rngMilestones" class="rng-milestones"></div></div>
+        <div><div class="section-title"><h3>🕘 Последние выпадения</h3><span class="badge">30</span></div><div id="rngHistory" class="rng-history"></div></div>
       </div>
 
     </div>
@@ -217,7 +238,36 @@
       <h2>Инвентарь питомцев</h2>
       <span class="small">Слияние: 3 одинаковых → +1 уровень</span>
     </div>
+    <div class="pet-toolbar" aria-label="Сортировка инвентаря питомцев">
+      <button type="button" id="petAutoEquip" class="primary">⚡ Лучшие</button>
+      <button type="button" id="petFuseAll" class="primary">🧬 Слить всё</button>
+      <label>Пресет
+        <select id="petPresetSelect"><option value="tap">Тап</option><option value="auto">Автоклик</option><option value="boss">Босс</option></select>
+      </label>
+      <button type="button" id="petPresetSave" class="primary">Сохранить</button>
+      <button type="button" id="petPresetLoad" class="primary">Экипировать</button>
+      <label>Auto Delete
+        <select id="petAutoDelete"><option value="none">Выключен</option><option value="common">Обычные</option><option value="rare">До редких</option><option value="epic">До эпических</option></select>
+      </label>
+      <label>Сортировка
+        <select id="petSortSelect">
+          <option value="power">По силе</option>
+          <option value="rarity">По редкости</option>
+          <option value="level">По уровню</option>
+          <option value="name">По имени</option>
+          <option value="newest">Сначала новые</option>
+        </select>
+      </label>
+      <button type="button" id="petSortDirection" class="sort-direction" aria-label="Изменить направление сортировки">↓</button>
+      <label class="equipped-first"><input type="checkbox" id="petEquippedFirst" checked> Экипированные сверху</label>
+      <span class="badge" id="petInventoryCount">0 питомцев</span>
+    </div>
     <div class="inventory" id="petInventory"></div>
+  </section>
+
+  <section id="worlds" class="panel hidden">
+    <div class="card"><div class="section-title"><div><h2>🌀 Порталы миров</h2><p class="small">Новые миры открываются поэтапно. В каждом — своё яйцо, набор питомцев, предел редкости аур и активные бонусы.</p></div><span class="badge" id="activeWorldBadge">Neon City</span></div><div id="worldGrid" class="world-grid"></div></div>
+    <div class="card spaced-card"><div class="section-title"><h2>🔓 Этапы открытия</h2></div><div id="unlockRoadmap" class="unlock-roadmap"></div></div>
   </section>
 
   <section id="rebirth" class="panel hidden">
@@ -228,13 +278,14 @@
       <div class="metric-grid">
         <div class="metric"><span class="small">Перерождения</span><b id="rebirthCount">0</b></div>
         <div class="metric"><span class="small">Постоянный множитель</span><b id="rebirthMultiplier">x1</b></div>
-        <div class="metric"><span class="small">Цена следующего</span><b id="rebirthCost">50K</b></div>
+        <div class="metric"><span class="small">Цена следующего</span><b id="rebirthCost">100K</b></div>
         <div class="metric"><span class="small">Бонус кристаллов</span><b>+3</b></div>
         <div class="metric"><span class="small">Souls</span><b id="rebirthSouls">0</b></div>
       </div>
       <button class="primary" id="rebirthBtn">Переродиться</button>
       <p class="small">Сохраняются: питомцы, ауры, кристаллы, Souls, дерево и достижения.</p>
     </div>
+    <div class="card spaced-card"><div class="section-title"><div><h2>🏆 Rebirth Milestones</h2><p class="small">Постоянные награды выдаются автоматически и не требуют покупки.</p></div><span class="badge" id="rebirthMilestoneCount">0 / 6</span></div><div id="rebirthMilestones" class="rebirth-milestones"></div></div>
   </section>
 
   <section id="minigames" class="panel hidden">
@@ -271,7 +322,12 @@
       <div class="card"><div class="section-title"><h2>⚡ Энергия</h2></div><div class="metric-grid"><div class="metric"><span>Максимум</span><b id="energyMaxValue">100</b></div><div class="metric"><span>Реген</span><b id="energyRegenValue">2/сек</b></div></div><button class="primary" id="energyMaxBtn">+25 энергии • <span id="energyMaxCost">10K</span></button><button class="primary" id="energyRegenBtn">+0.25/сек • <span id="energyRegenCost">5 💎</span></button></div>
       <div class="card"><div class="section-title"><h2>🍀 Luck Boosts</h2></div><div id="boostInventory"></div></div>
     </div>
-    <div class="card spaced-card"><div class="section-title"><h2>🌌 Дерево перерождений</h2><span class="badge">Souls: <b id="soulsValue">0</b></span></div><div id="soulTree" class="soul-tree"></div></div>
+    <div class="card spaced-card mastery-card">
+      <div class="section-title"><div><h2>💠 Дерево мастерства</h2><p class="small">Как в Simulator-режимах: играй активно, получай очки и открывай связанные ветви.</p></div><span class="badge">Очки: <b id="masteryPoints">0</b></span></div>
+      <div class="mastery-progress" id="masteryProgress">Следующее очко за прогресс</div>
+      <div id="masteryTree" class="mastery-tree"></div>
+    </div>
+    <div class="card spaced-card"><div class="section-title"><div><h2>🌌 Дерево перерождений</h2><p class="small">Открывай ветви по порядку. Купленные уровни сохраняются навсегда.</p></div><span class="badge">Souls: <b id="soulsValue">0</b></span></div><div id="soulTree" class="soul-tree"></div></div>
   </section>
 
   <section id="boss" class="panel hidden">

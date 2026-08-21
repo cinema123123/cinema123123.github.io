@@ -1,11 +1,11 @@
 {
-  "name": "Neon Clicker Ultimate",
-  "short_name": "Neon Ultimate",
+  "name": "Neon Clicker: Cyber Simulator",
+  "short_name": "Neon Clicker",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#070914",
-  "theme_color": "#070914",
+  "background_color": "#040610",
+  "theme_color": "#050817",
   "icons": [
     {
       "src": "icon-180.png",

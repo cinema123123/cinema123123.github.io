@@ -51,49 +51,49 @@ const upgrades = [
 const auras = [
   // Обычные
   {id:'cyan', name:'Неоновый контур', rarity:'common', mult:1.10, accent:'#00eaff', accent2:'#286cff', odds:2},
-  {id:'spark', name:'Искра мегаполиса', rarity:'common', mult:1.12, accent:'#45f3ff', accent2:'#407bff', odds:4},
-  {id:'lime', name:'Кислотный след', rarity:'common', mult:1.14, accent:'#8dff45', accent2:'#20c970', odds:8},
-  {id:'rose', name:'Розовый импульс', rarity:'common', mult:1.16, accent:'#ff5fcf', accent2:'#8f44ff', odds:16},
-  {id:'steel', name:'Стальной резонанс', rarity:'common', mult:1.18, accent:'#b9c8df', accent2:'#55708f', odds:32},
-  {id:'ember', name:'Угольный заряд', rarity:'common', mult:1.20, accent:'#ff8b45', accent2:'#dd3b3b', odds:64},
+  {id:'spark', name:'Искра мегаполиса', rarity:'common', mult:1.12, accent:'#45f3ff', accent2:'#407bff', odds:3},
+  {id:'lime', name:'Кислотный след', rarity:'common', mult:1.14, accent:'#8dff45', accent2:'#20c970', odds:5},
+  {id:'rose', name:'Розовый импульс', rarity:'common', mult:1.16, accent:'#ff5fcf', accent2:'#8f44ff', odds:8},
+  {id:'steel', name:'Стальной резонанс', rarity:'common', mult:1.18, accent:'#b9c8df', accent2:'#55708f', odds:12},
+  {id:'ember', name:'Угольный заряд', rarity:'common', mult:1.20, accent:'#ff8b45', accent2:'#dd3b3b', odds:18},
 
   // Редкие
-  {id:'violet', name:'Фантомный импульс', rarity:'rare', mult:1.35, accent:'#bf5cff', accent2:'#5f45ff', odds:128},
-  {id:'frost', name:'Ледяной протокол', rarity:'rare', mult:1.42, accent:'#85e8ff', accent2:'#3675ff', odds:256},
-  {id:'toxic', name:'Токсичный реактор', rarity:'rare', mult:1.48, accent:'#61ff7b', accent2:'#00b86b', odds:512},
-  {id:'crimson', name:'Багровая частота', rarity:'rare', mult:1.55, accent:'#ff345c', accent2:'#a1004c', odds:1024},
-  {id:'storm', name:'Грозовая сеть', rarity:'rare', mult:1.62, accent:'#8cc8ff', accent2:'#654cff', odds:2048},
-  {id:'holo', name:'Голографический спектр', rarity:'rare', mult:1.70, accent:'#43fff2', accent2:'#e24cff', odds:4096},
+  {id:'violet', name:'Фантомный импульс', rarity:'rare', mult:1.35, accent:'#bf5cff', accent2:'#5f45ff', odds:28},
+  {id:'frost', name:'Ледяной протокол', rarity:'rare', mult:1.42, accent:'#85e8ff', accent2:'#3675ff', odds:45},
+  {id:'toxic', name:'Токсичный реактор', rarity:'rare', mult:1.48, accent:'#61ff7b', accent2:'#00b86b', odds:70},
+  {id:'crimson', name:'Багровая частота', rarity:'rare', mult:1.55, accent:'#ff345c', accent2:'#a1004c', odds:110},
+  {id:'storm', name:'Грозовая сеть', rarity:'rare', mult:1.62, accent:'#8cc8ff', accent2:'#654cff', odds:160},
+  {id:'holo', name:'Голографический спектр', rarity:'rare', mult:1.70, accent:'#43fff2', accent2:'#e24cff', odds:225},
 
   // Эпические
-  {id:'plasma', name:'Плазменный шторм', rarity:'epic', mult:2.00, accent:'#ff3bd4', accent2:'#7b2cff', odds:8192},
-  {id:'nebula', name:'Туманность Омега', rarity:'epic', mult:2.20, accent:'#c363ff', accent2:'#3d4cff', odds:16384},
-  {id:'quantum', name:'Квантовый разлом', rarity:'epic', mult:2.40, accent:'#54f5ff', accent2:'#bb2cff', odds:32768},
-  {id:'eclipse', name:'Кибер-затмение', rarity:'epic', mult:2.60, accent:'#ff487d', accent2:'#3c1b7a', odds:65536},
-  {id:'matrix', name:'Матрица сознания', rarity:'epic', mult:2.85, accent:'#4dff9d', accent2:'#00a8b8', odds:131072},
-  {id:'arcane', name:'Арканный процессор', rarity:'epic', mult:3.15, accent:'#f258ff', accent2:'#6134ff', odds:262144},
+  {id:'plasma', name:'Плазменный шторм', rarity:'epic', mult:2.00, accent:'#ff3bd4', accent2:'#7b2cff', odds:350},
+  {id:'nebula', name:'Туманность Омега', rarity:'epic', mult:2.20, accent:'#c363ff', accent2:'#3d4cff', odds:550},
+  {id:'quantum', name:'Квантовый разлом', rarity:'epic', mult:2.40, accent:'#54f5ff', accent2:'#bb2cff', odds:850},
+  {id:'eclipse', name:'Кибер-затмение', rarity:'epic', mult:2.60, accent:'#ff487d', accent2:'#3c1b7a', odds:1300},
+  {id:'matrix', name:'Матрица сознания', rarity:'epic', mult:2.85, accent:'#4dff9d', accent2:'#00a8b8', odds:1900},
+  {id:'arcane', name:'Арканный процессор', rarity:'epic', mult:3.15, accent:'#f258ff', accent2:'#6134ff', odds:2700},
 
   // Легендарные
-  {id:'solar', name:'Солнечное ядро', rarity:'legendary', mult:5.00, accent:'#ffbb35', accent2:'#ff4d3d', odds:524288},
-  {id:'supernova', name:'Сверхновая', rarity:'legendary', mult:5.50, accent:'#fff178', accent2:'#ff533d', odds:1048576},
-  {id:'blackstar', name:'Чёрная звезда', rarity:'legendary', mult:6.00, accent:'#b191ff', accent2:'#19134f', odds:2097152},
-  {id:'chrono', name:'Хроно-пульс', rarity:'legendary', mult:6.50, accent:'#68fff2', accent2:'#7758ff', odds:4194304},
-  {id:'royal', name:'Корона мегасети', rarity:'legendary', mult:7.00, accent:'#ffd65f', accent2:'#b24dff', odds:8388608},
-  {id:'dragonfire', name:'Драконий реактор', rarity:'legendary', mult:7.75, accent:'#ff713d', accent2:'#ff244e', odds:16777216},
+  {id:'solar', name:'Солнечное ядро', rarity:'legendary', mult:4.50, accent:'#ffbb35', accent2:'#ff4d3d', odds:4000},
+  {id:'supernova', name:'Сверхновая', rarity:'legendary', mult:5.00, accent:'#fff178', accent2:'#ff533d', odds:6000},
+  {id:'blackstar', name:'Чёрная звезда', rarity:'legendary', mult:5.50, accent:'#b191ff', accent2:'#19134f', odds:9000},
+  {id:'chrono', name:'Хроно-пульс', rarity:'legendary', mult:6.00, accent:'#68fff2', accent2:'#7758ff', odds:13000},
+  {id:'royal', name:'Корона мегасети', rarity:'legendary', mult:6.50, accent:'#ffd65f', accent2:'#b24dff', odds:20000},
+  {id:'dragonfire', name:'Драконий реактор', rarity:'legendary', mult:7.00, accent:'#ff713d', accent2:'#ff244e', odds:30000},
 
   // Мифические
-  {id:'void', name:'Мифическая сингулярность', rarity:'mythical', mult:12.00, accent:'#ffffff', accent2:'#ff38e8', odds:33554432},
-  {id:'infinity', name:'Код бесконечности', rarity:'mythical', mult:13.50, accent:'#79fff2', accent2:'#ff46e9', odds:67108864},
-  {id:'creator', name:'Ядро Создателя', rarity:'mythical', mult:15.00, accent:'#fff5b5', accent2:'#ca4cff', odds:134217728},
-  {id:'celestial', name:'Небесный протокол', rarity:'mythical', mult:16.50, accent:'#d6f7ff', accent2:'#735cff', odds:268435456},
-  {id:'paradox', name:'Парадокс реальности', rarity:'mythical', mult:18.00, accent:'#ff70db', accent2:'#32f1ff', odds:536870912},
-  {id:'absolute', name:'Абсолютный ноль', rarity:'mythical', mult:20.00, accent:'#e9ffff', accent2:'#4578ff', odds:1073741824},
+  {id:'void', name:'Мифическая сингулярность', rarity:'mythical', mult:9.00, accent:'#ffffff', accent2:'#ff38e8', odds:45000},
+  {id:'infinity', name:'Код бесконечности', rarity:'mythical', mult:10.00, accent:'#79fff2', accent2:'#ff46e9', odds:70000},
+  {id:'creator', name:'Ядро Создателя', rarity:'mythical', mult:11.50, accent:'#fff5b5', accent2:'#ca4cff', odds:105000},
+  {id:'celestial', name:'Небесный протокол', rarity:'mythical', mult:13.00, accent:'#d6f7ff', accent2:'#735cff', odds:160000},
+  {id:'paradox', name:'Парадокс реальности', rarity:'mythical', mult:14.50, accent:'#ff70db', accent2:'#32f1ff', odds:240000},
+  {id:'absolute', name:'Абсолютный ноль', rarity:'mythical', mult:16.00, accent:'#e9ffff', accent2:'#4578ff', odds:350000},
 
   // SECRET / CELESTIAL — эндгейм
-  {id:'redacted', name:'[REDACTED]', rarity:'secret', mult:25.00, accent:'#ff3158', accent2:'#620018', odds:2147483648},
-  {id:'reality', name:'Разрушитель реальности', rarity:'secret', mult:32.00, accent:'#ff6a9f', accent2:'#17101f', odds:4294967296},
-  {id:'celestialCore', name:'Небесное ядро', rarity:'celestial', mult:45.00, accent:'#e9ffff', accent2:'#7b71ff', odds:8589934592},
-  {id:'infiniteCrown', name:'Корона бесконечности', rarity:'celestial', mult:60.00, accent:'#ffffff', accent2:'#ffed7a', odds:17179869184}
+  {id:'redacted', name:'[REDACTED]', rarity:'secret', mult:20.00, accent:'#ff3158', accent2:'#620018', odds:600000},
+  {id:'reality', name:'Разрушитель реальности', rarity:'secret', mult:25.00, accent:'#ff6a9f', accent2:'#17101f', odds:1000000},
+  {id:'celestialCore', name:'Небесное ядро', rarity:'celestial', mult:34.00, accent:'#e9ffff', accent2:'#7b71ff', odds:2000000},
+  {id:'infiniteCrown', name:'Корона бесконечности', rarity:'celestial', mult:45.00, accent:'#ffffff', accent2:'#ffed7a', odds:5000000}
 ];
 
 const pets = {
@@ -135,13 +135,45 @@ const pets = {
 
 const eggs = [
   {
-    id:'basic', name:'Неоновое яйцо', cost:4000, currency:'clicks',
-    rarityChances:[['common',60],['rare',25],['epic',10],['legendary',4],['mythical',1]]
+    id:'basic', world:'neon', name:'Неоновое яйцо', cost:4000, currency:'clicks',petPool:['nanoCat','voltFox','glitchOwl','mechDragon','starSeraph'],
+    rarityChances:[['common',63],['rare',25],['epic',9],['legendary',2.5],['mythical',0.5]]
   },
   {
-    id:'elite', name:'Квантовое яйцо', cost:18, currency:'crystals',
-    rarityChances:[['common',10],['rare',35],['epic',30],['legendary',20],['mythical',5]]
+    id:'elite', world:'cyber', name:'Квантовое яйцо', cost:18, currency:'crystals',petPool:['rabbit','lynx','frostBear','cerberus','timeDragon'],
+    rarityChances:[['common',12],['rare',38],['epic',30],['legendary',17],['mythical',3]]
+  },
+  {
+    id:'voidEgg', world:'void', name:'Яйцо Бездны', cost:55, currency:'crystals',petPool:['dog','panther','shadowTiger','thunderbird','cosmicLeviathan'],
+    rarityChances:[['common',5],['rare',25],['epic',35],['legendary',27],['mythical',8]]
+  },
+  {
+    id:'celestialEgg', world:'celestial', name:'Небесное яйцо', cost:140, currency:'crystals',petPool:['boar','falcon','griffin','leviathan','celestialKitsune'],
+    rarityChances:[['common',2],['rare',13],['epic',30],['legendary',40],['mythical',15]]
   }
+];
+
+const WORLDS=[
+  {id:'neon',name:'🌃 Neon City',rebirths:0,click:1,auto:1,luck:1,desc:'Стартовый мир мегаполиса'},
+  {id:'cyber',name:'💾 Cyber Space',rebirths:2,click:1.25,auto:1.15,luck:1.05,desc:'Квантовые питомцы и ускоренный доход'},
+  {id:'void',name:'🌑 Void',rebirths:5,click:1.60,auto:1.35,luck:1.12,desc:'Сильные питомцы и повышенный RNG'},
+  {id:'celestial',name:'☄️ Celestial Realm',rebirths:10,click:2.20,auto:1.80,luck:1.25,desc:'Финальный мир с лучшими наградами'}
+];
+const FEATURE_UNLOCKS={auraShop:1,missions:2,auraIndex:3,progression:4,boss:5};
+const REBIRTH_MILESTONES=[
+  {at:1,name:'Первый цикл',desc:'+10% ко всему доходу'},
+  {at:3,name:'Резонанс удачи',desc:'+0.10 постоянного Luck'},
+  {at:5,name:'Связь миров',desc:'+15% к бонусам питомцев'},
+  {at:10,name:'Двойная душа',desc:'+1 Soul за каждое перерождение'},
+  {at:15,name:'RNG Overdrive',desc:'Auto Roll быстрее ещё на 0.1 сек'},
+  {at:25,name:'Разрушитель миров',desc:'+30% урона мировому боссу'}
+];
+const NEON_RANKS=[
+  {at:0,name:'Новичок',icon:'◇',mult:1},
+  {at:2,name:'Neon Runner',icon:'◆',mult:1.05},
+  {at:5,name:'Cyber Operator',icon:'⬡',mult:1.10},
+  {at:10,name:'Void Walker',icon:'✦',mult:1.20},
+  {at:15,name:'Celestial',icon:'✧',mult:1.35},
+  {at:25,name:'Neon Architect',icon:'◈',mult:1.50}
 ];
 
 const PET_STAGES={
@@ -151,6 +183,37 @@ const PET_STAGES={
   void:{name:'Void',mult:4}
 };
 const PET_STAGE_ORDER=['normal','shiny','golden','void'];
+const PET_RARITY_RANK={common:0,rare:1,epic:2,legendary:3,mythical:4};
+
+const SOUL_TREE_NODES=[
+  {id:'power',name:'⚔️ Импульс силы',desc:'+10% ко всему доходу',max:10,baseCost:1},
+  {id:'auto',name:'🤖 Авто-мощь',desc:'+15% к автоклику',max:8,baseCost:1,requires:['power',2]},
+  {id:'luck',name:'🍀 Soul Luck',desc:'+0.25 к RNG Luck',max:10,baseCost:2,requires:['power',2]},
+  {id:'energy',name:'🔋 Батарея',desc:'+20 к максимуму энергии',max:8,baseCost:1,requires:['power',3]},
+  {id:'regen',name:'⚡ Нано-реген',desc:'+0.25 энергии/сек',max:8,baseCost:2,requires:['energy',2]},
+  {id:'petPower',name:'🐾 Синхронизация',desc:'+8% к бонусам питомцев',max:8,baseCost:2,requires:['auto',2]},
+  {id:'critChance',name:'🎯 Крит-протокол',desc:'+2% шанса критического тапа',max:5,baseCost:3,requires:['power',4]},
+  {id:'critPower',name:'💥 Перегрузка крита',desc:'+0.5 к множителю крита',max:6,baseCost:3,requires:['critChance',2]},
+  {id:'bossDamage',name:'👹 Охотник',desc:'+20% урона мировому боссу',max:5,baseCost:3,requires:['auto',3]},
+  {id:'autoRollSpeed',name:'🎲 RNG-ускоритель',desc:'Auto Roll быстрее на 0.1 сек',max:5,baseCost:4,requires:['luck',3]},
+  {id:'soulYield',name:'♻️ Эхо души',desc:'+1 Soul за перерождение каждые 3 ур.',max:6,baseCost:5,requires:['luck',4]},
+  {id:'fourthSlot',name:'🌟 4-й слот питомца',desc:'Открывает ещё один слот экипировки',max:1,baseCost:12,requires:['petPower',5]}
+];
+
+const MASTERY_TREE_NODES=[
+  {id:'core',branch:'core',name:'💠 Ядро мастерства',desc:'+5% ко всему доходу',max:5,cost:1},
+  {id:'tap',branch:'tap',name:'👆 Сила тапа',desc:'+8% к ручному клику',max:8,cost:1,requires:['core',2]},
+  {id:'auto',branch:'auto',name:'🏭 Автоматизация',desc:'+10% к автоклику',max:8,cost:1,requires:['core',2]},
+  {id:'rng',branch:'rng',name:'🎲 RNG-канал',desc:'+0.08 к постоянному Luck',max:8,cost:1,requires:['core',3]},
+  {id:'pets',branch:'pets',name:'🐾 Связь с питомцами',desc:'+5% к бонусам питомцев',max:6,cost:2,requires:['core',3]},
+  {id:'battery',branch:'tap',name:'🔋 Эко-тап',desc:'+4% шанс не потратить энергию',max:5,cost:2,requires:['tap',2]},
+  {id:'crit',branch:'tap',name:'🎯 Точный удар',desc:'+1% шанса крита',max:5,cost:2,requires:['tap',3]},
+  {id:'critPower',branch:'tap',name:'💥 Сверхкрит',desc:'+0.25 к силе крита',max:4,cost:3,requires:['crit',2]},
+  {id:'factory',branch:'auto',name:'⚙️ Мега-фабрика',desc:'+12% к автоклику',max:5,cost:2,requires:['auto',3]},
+  {id:'hatch',branch:'pets',name:'🥚 Экономный инкубатор',desc:'-3% к цене яиц',max:5,cost:2,requires:['pets',2]},
+  {id:'boss',branch:'auto',name:'👹 Уничтожитель',desc:'+10% урона боссу',max:5,cost:2,requires:['auto',3]},
+  {id:'superLuck',branch:'rng',name:'🌈 Сверхудача',desc:'+0.15 к постоянному Luck',max:5,cost:3,requires:['rng',4]}
+];
 
 const EVENTS=[
   {id:'neonStorm',name:'⚡ NEON STORM',desc:'Удача аур x3',luck:3,duration:60000},
@@ -165,6 +228,20 @@ const QUESTS=[
   {id:'eggs5',name:'Открыть 5 яиц',get:()=>state.stats.eggsOpened,target:5,reward:{boost:'x2'}},
   {id:'rebirth1',name:'Сделать перерождение',get:()=>state.rebirths,target:1,reward:{crystals:10}},
   {id:'boss1',name:'Победить мирового босса',get:()=>state.boss.wins,target:1,reward:{boost:'x5'}}
+];
+
+const DAILY_QUEST_POOL=[
+  {id:'manual',name:'Сделать 200 ручных тапов',stat:'manualTaps',target:200,reward:{clicks:12000}},
+  {id:'rolls',name:'Прокрутить 30 аур',stat:'auraRolls',target:30,reward:{crystals:4}},
+  {id:'eggs',name:'Открыть 3 яйца',stat:'eggsOpened',target:3,reward:{clicks:18000}},
+  {id:'bosses',name:'Победить мирового босса',stat:'bossesKilled',target:1,reward:{boost:'x2'}},
+  {id:'games',name:'Сыграть 2 мини-игры',stat:'miniGamesPlayed',target:2,reward:{crystals:3}}
+];
+const RNG_MILESTONES=[
+  {id:'r100',target:100,reward:{clicks:25000}},
+  {id:'r1000',target:1000,reward:{crystals:15}},
+  {id:'r10000',target:10000,reward:{boost:'x5'}},
+  {id:'r100000',target:100000,reward:{crystals:100,boost:'x10'}}
 ];
 
 const INDEX_REWARDS=[
@@ -184,14 +261,21 @@ const defaultState = {
   petInventory:[], equippedPets:[],
   auraLevels:{}, lockedAuras:[], favoriteAuras:[],
   auraLuckLevel:0,
+  auraPity:0,
   rebirths:0, souls:0,
-  rebirthTree:{power:0,luck:0,energy:0,regen:0,auto:0},
+  rebirthTree:{power:0,luck:0,energy:0,regen:0,auto:0,petPower:0,critChance:0,critPower:0,bossDamage:0,autoRollSpeed:0,soulYield:0,fourthSlot:0},
+  petSort:{key:'power',direction:'desc',equippedFirst:true},
+  masteryTree:{core:0,tap:0,auto:0,rng:0,pets:0,battery:0,crit:0,critPower:0,factory:0,hatch:0,boss:0,superLuck:0},
+  activeWorld:'neon',unlockedWorlds:['neon'],
+  petPresets:{tap:[],auto:[],boss:[]},activePetPreset:'tap',autoDeleteMax:'none',
   autoRollUnlocked:false, autoRoll:false, autoSkipOdds:128,
   luckBoosts:{x2:0,x5:0,x10:0}, luckBoostMult:1, luckBoostEnd:0,
   daily:{lastClaim:'',streak:0},
   boss:{active:false,hp:0,maxHp:0,end:0,cooldownUntil:0,wins:0},
   activeEvent:null, eventEnd:0, nextEventAt:0,
   questClaims:{}, indexRewards:{},
+  dailyQuests:{date:'',base:{},claims:{}},
+  rngHistory:[], rngMilestones:{},
   bestReaction:null,
   bestTargetScore:0,
   achievements:{},
@@ -218,11 +302,17 @@ function normalizeCloudState(saved){
     auraLuckLevel:Number(saved.auraLuckLevel||0),
     rebirths:Number(saved.rebirths||0),souls:Number(saved.souls||0),
     rebirthTree:{...defaultState.rebirthTree,...(saved.rebirthTree||{})},
+    petSort:{...defaultState.petSort,...(saved.petSort||{})},
+    masteryTree:{...defaultState.masteryTree,...(saved.masteryTree||{})},
+    activeWorld:saved.activeWorld||'neon',unlockedWorlds:Array.isArray(saved.unlockedWorlds)?saved.unlockedWorlds:['neon'],
+    petPresets:{...defaultState.petPresets,...(saved.petPresets||{})},activePetPreset:saved.activePetPreset||'tap',autoDeleteMax:saved.autoDeleteMax||'none',
     autoRollUnlocked:Boolean(saved.autoRollUnlocked),autoRoll:Boolean(saved.autoRoll),autoSkipOdds:Number(saved.autoSkipOdds||128),
     luckBoosts:{...defaultState.luckBoosts,...(saved.luckBoosts||{})},luckBoostMult:Number(saved.luckBoostMult||1),luckBoostEnd:Number(saved.luckBoostEnd||0),
     daily:{...defaultState.daily,...(saved.daily||{})},boss:{...defaultState.boss,...(saved.boss||{})},
     activeEvent:saved.activeEvent||null,eventEnd:Number(saved.eventEnd||0),nextEventAt:Number(saved.nextEventAt||0),
     questClaims:{...defaultState.questClaims,...(saved.questClaims||{})},indexRewards:{...defaultState.indexRewards,...(saved.indexRewards||{})},
+    dailyQuests:{...defaultState.dailyQuests,...(saved.dailyQuests||{}),base:{...(saved.dailyQuests?.base||{})},claims:{...(saved.dailyQuests?.claims||{})}},
+    rngHistory:Array.isArray(saved.rngHistory)?saved.rngHistory.slice(0,30):[],rngMilestones:{...defaultState.rngMilestones,...(saved.rngMilestones||{})},
     bestReaction:saved.bestReaction??null,bestTargetScore:Number(saved.bestTargetScore||0),
     energyMaxLevel:Number(saved.energyMaxLevel||0),energyRegenLevel:Number(saved.energyRegenLevel||0),
     energy:Number(saved.energy??100),maxEnergy:Number(saved.maxEnergy||100),energyRegen:Number(saved.energyRegen&&saved.energyRegen!==8?saved.energyRegen:2),
@@ -253,6 +343,12 @@ function load(){
       rebirths: Number(saved.rebirths || 0),
       souls: Number(saved.souls || 0),
       rebirthTree: {...defaultState.rebirthTree, ...(saved.rebirthTree || {})},
+      petSort: {...defaultState.petSort, ...(saved.petSort || {})},
+      masteryTree: {...defaultState.masteryTree, ...(saved.masteryTree || {})},
+      activeWorld: saved.activeWorld || 'neon',
+      unlockedWorlds: Array.isArray(saved.unlockedWorlds) ? saved.unlockedWorlds : ['neon'],
+      petPresets: {...defaultState.petPresets, ...(saved.petPresets || {})},
+      activePetPreset: saved.activePetPreset || 'tap',autoDeleteMax:saved.autoDeleteMax || 'none',
       autoRollUnlocked: Boolean(saved.autoRollUnlocked),
       autoRoll: Boolean(saved.autoRoll),
       autoSkipOdds: Number(saved.autoSkipOdds || 128),
@@ -266,6 +362,9 @@ function load(){
       nextEventAt: Number(saved.nextEventAt || 0),
       questClaims: {...defaultState.questClaims, ...(saved.questClaims || {})},
       indexRewards: {...defaultState.indexRewards, ...(saved.indexRewards || {})},
+      dailyQuests: {...defaultState.dailyQuests, ...(saved.dailyQuests || {}),base:{...(saved.dailyQuests?.base||{})},claims:{...(saved.dailyQuests?.claims||{})}},
+      rngHistory: Array.isArray(saved.rngHistory) ? saved.rngHistory.slice(0,30) : [],
+      rngMilestones: {...defaultState.rngMilestones, ...(saved.rngMilestones || {})},
       bestReaction: saved.bestReaction ?? null,
       bestTargetScore: Number(saved.bestTargetScore || 0),
       energyMaxLevel: Number(saved.energyMaxLevel || 0),
@@ -407,17 +506,42 @@ function auraMultiplier(){
   const a = auras.find(x=>x.id===state.equippedAura);
   if(!a) return 1;
   const level = state.auraLevels[a.id] || 1;
-  const levelScale = 1 + 0.15 * (level - 1);
+  const levelScale = 1 + 0.12 * Math.min(level - 1,25);
   return 1 + (a.mult - 1) * levelScale;
 }
 function rebirthMultiplier(){
-  return 1 + state.rebirths * 0.5;
+  return 1 + state.rebirths * 0.35;
 }
 function rebirthCost(){
-  return Math.floor(50000 * Math.pow(3, state.rebirths));
+  return Math.floor(100000 * Math.pow(2.5, state.rebirths));
 }
+function hasRebirthMilestone(at){return state.rebirths>=at;}
+function currentNeonRank(){return [...NEON_RANKS].reverse().find(r=>state.rebirths>=r.at)||NEON_RANKS[0];}
+function neonRankMultiplier(){return currentNeonRank().mult;}
+function rebirthMilestoneIncome(){return hasRebirthMilestone(1)?1.10:1;}
+function rebirthMilestonePet(){return hasRebirthMilestone(5)?1.15:1;}
 function treePowerMultiplier(){ return 1 + (state.rebirthTree.power||0)*0.10; }
 function treeAutoMultiplier(){ return 1 + (state.rebirthTree.auto||0)*0.15; }
+function treePetMultiplier(){ return 1 + (state.rebirthTree.petPower||0)*0.08; }
+function masteryLevel(id){return Number(state.masteryTree?.[id]||0);}
+function masteryIncomeMultiplier(){return 1+masteryLevel('core')*0.05;}
+function masteryTapMultiplier(){return 1+masteryLevel('tap')*0.08;}
+function masteryAutoMultiplier(){return 1+masteryLevel('auto')*0.10+masteryLevel('factory')*0.12;}
+function masteryPetMultiplier(){return (1+masteryLevel('pets')*0.05)*rebirthMilestonePet();}
+function masteryBossMultiplier(){return (1+masteryLevel('boss')*0.10)*(hasRebirthMilestone(25)?1.30:1);}
+function activeWorldDef(){return WORLDS.find(w=>w.id===state.activeWorld)||WORLDS[0];}
+function worldAuraLimit(){return {neon:17,cyber:23,void:29,celestial:33}[state.activeWorld]??17;}
+function syncWorldUnlocks(){WORLDS.forEach(w=>{if(state.rebirths>=w.rebirths&&!state.unlockedWorlds.includes(w.id))state.unlockedWorlds.push(w.id);});if(!state.unlockedWorlds.includes(state.activeWorld))state.activeWorld='neon';}
+function travelWorld(id){syncWorldUnlocks();if(!state.unlockedWorlds.includes(id)){const w=WORLDS.find(x=>x.id===id);addLog(`Нужно ${w.rebirths} перерождений для портала.`);return;}state.activeWorld=id;addLog(`🌀 Переход: ${activeWorldDef().name}`);haptic('success');render();save();}
+function masteryPointsEarned(){return Math.floor(state.stats.manualTaps/500)+Math.floor(state.stats.auraRolls/100)+Math.floor(state.stats.eggsOpened/10)+state.rebirths*2+Math.floor(state.boss.wins/3);}
+function masteryPointsSpent(){return MASTERY_TREE_NODES.reduce((sum,n)=>sum+masteryLevel(n.id)*n.cost,0);}
+function masteryPointsAvailable(){return Math.max(0,masteryPointsEarned()-masteryPointsSpent());}
+function masteryNodeDef(id){return MASTERY_TREE_NODES.find(n=>n.id===id);}
+function buyMasteryNode(id){const node=masteryNodeDef(id);if(!node)return;const level=masteryLevel(id);if(level>=node.max)return;if(node.requires&&masteryLevel(node.requires[0])<node.requires[1]){addLog('Сначала открой предыдущий узел этой ветви.');return;}if(masteryPointsAvailable()<node.cost){addLog(`Нужно ${node.cost} очк. мастерства.`);return;}state.masteryTree[id]=level+1;addLog(`💠 ${node.name}: ур. ${level+1}`);haptic('success');render();save();}
+function petSlotLimit(){ return 3 + ((state.rebirthTree.fourthSlot||0)>0?1:0); }
+function autoRollDelay(){ return Math.max(0.4,1-(state.rebirthTree.autoRollSpeed||0)*0.1-(hasRebirthMilestone(15)?0.1:0)); }
+function bossDamageMultiplier(){ return 1+(state.rebirthTree.bossDamage||0)*0.20; }
+function eggCostValue(egg){return Math.max(1,Math.floor(egg.cost*(1-masteryLevel('hatch')*0.03)));}
 function maxEnergyValue(){ return 100 + state.energyMaxLevel*25 + (state.rebirthTree.energy||0)*20; }
 function baseEnergyRegen(){ return 2 + state.energyRegenLevel*0.25 + (state.rebirthTree.regen||0)*0.25; }
 function activeEventDef(){
@@ -442,11 +566,12 @@ function activeLuckBoostMultiplier(){
   return state.luckBoostMult||1;
 }
 function auraLuckMultiplier(){
-  const permanent=1 + state.auraLuckLevel*0.25 + (state.rebirthTree.luck||0)*0.25 + collectionLuckBonus();
-  return permanent * activeLuckBoostMultiplier() * eventLuckMultiplier();
+  const permanent=1 + state.auraLuckLevel*0.15 + (state.rebirthTree.luck||0)*0.25 + masteryLevel('rng')*0.08 + masteryLevel('superLuck')*0.15 + (hasRebirthMilestone(3)?0.10:0) + collectionLuckBonus();
+  const pity=Math.min(2.5,1+Math.floor(Number(state.auraPity||0)/20)*0.05);
+  return Math.min(40,permanent * activeLuckBoostMultiplier() * eventLuckMultiplier() * pity * activeWorldDef().luck);
 }
-function auraLuckCost(){ return Math.floor(5000 * Math.pow(1.60, state.auraLuckLevel)); }
-function energyMaxCost(){ return Math.floor(10000*Math.pow(1.75,state.energyMaxLevel)); }
+function auraLuckCost(){ return Math.floor(2000 * Math.pow(1.32, state.auraLuckLevel)); }
+function energyMaxCost(){ return Math.floor(8000*Math.pow(1.55,state.energyMaxLevel)); }
 function energyRegenCost(){ return 5 + state.energyRegenLevel*5; }
 function buyEnergyMax(){
   const c=energyMaxCost();
@@ -471,15 +596,13 @@ function buyAuraLuck(){
   save();
 }
 
-// One base RNG roll. Aura #1 = 1/2, #2 = 1/4, #3 = 1/8...
+// One base RNG roll. The displayed 1/N means the chance to obtain this aura or better.
 function singleAuraRngIndex(){
-  // Geometric coin-flip distribution.
-  // If all 30 checks fail, repeat; this keeps the 1/2^n ladder effectively exact.
-  while(true){
-    for(let i=0;i<auras.length;i++){
-      if(Math.random() < 0.5) return i;
-    }
+  const roll=Math.random();
+  for(let i=worldAuraLimit();i>=0;i--){
+    if(roll<=1/auras[i].odds)return i;
   }
+  return 0;
 }
 
 function luckyAuraRoll(){
@@ -498,25 +621,25 @@ function luckyAuraRoll(){
 }
 
 function petMultipliers(){
-  let click=1, auto=1;
+  let clickBonus=0, autoBonus=0;
   state.equippedPets.forEach(uid=>{
     const entry = state.petInventory.find(p=>p.uid===uid);
     if(!entry) return;
     const p = pets[entry.petId]; if(!p)return;
     const levelBoost = Math.pow(1.35, entry.level-1);
     const stageBoost = PET_STAGES[entry.stage||'normal']?.mult||1;
-    click *= 1 + (p.click-1)*levelBoost*stageBoost;
-    auto *= 1 + (p.auto-1)*levelBoost*stageBoost;
+    clickBonus += (p.click-1)*levelBoost*stageBoost*treePetMultiplier()*masteryPetMultiplier();
+    autoBonus += (p.auto-1)*levelBoost*stageBoost*treePetMultiplier()*masteryPetMultiplier();
   });
-  return {click,auto};
+  return {click:1+clickBonus,auto:1+autoBonus};
 }
 function perClick(){
   const p=petMultipliers();
-  return baseTap()*auraMultiplier()*p.click*rebirthMultiplier()*treePowerMultiplier()*eventClickMultiplier();
+  return baseTap()*auraMultiplier()*p.click*rebirthMultiplier()*treePowerMultiplier()*masteryIncomeMultiplier()*masteryTapMultiplier()*rebirthMilestoneIncome()*neonRankMultiplier()*eventClickMultiplier()*activeWorldDef().click;
 }
 function perSec(){
   const p=petMultipliers();
-  return baseAuto()*auraMultiplier()*p.auto*rebirthMultiplier()*treePowerMultiplier()*treeAutoMultiplier()*eventAutoMultiplier();
+  return baseAuto()*auraMultiplier()*p.auto*rebirthMultiplier()*treePowerMultiplier()*treeAutoMultiplier()*masteryIncomeMultiplier()*masteryAutoMultiplier()*rebirthMilestoneIncome()*neonRankMultiplier()*eventAutoMultiplier()*activeWorldDef().auto;
 }
 
 function addLog(text){
@@ -545,8 +668,11 @@ function doClick(ev){
     renderTop();
     return;
   }
-  state.energy=Math.max(0,state.energy-1);
-  const amount=perClick();
+  if(Math.random()>=masteryLevel('battery')*0.04)state.energy=Math.max(0,state.energy-1);
+  const critChance=(state.rebirthTree.critChance||0)*0.02+masteryLevel('crit')*0.01;
+  const isCrit=Math.random()<critChance;
+  const critMult=2+(state.rebirthTree.critPower||0)*0.5+masteryLevel('critPower')*0.25;
+  const amount=perClick()*(isCrit?critMult:1);
   state.clicks += amount;
   state.totalClicks += amount;
   state.stats.manualTaps++;
@@ -554,6 +680,7 @@ function doClick(ev){
   const b=document.getElementById('clickButton');
   b.classList.add('hit'); setTimeout(()=>b.classList.remove('hit'),90);
   spawnFloat(ev.clientX, ev.clientY, amount);
+  if(isCrit)addLog(`💥 Критический тап x${critMult.toFixed(2)}!`);
   achievements();
   renderTop();
   save();
@@ -587,6 +714,7 @@ function equipAura(id){
 
 function rollAura(options={}){
   const auto=Boolean(options.auto);
+  const silent=Boolean(options.silent),defer=Boolean(options.defer);
   const cost=500;
   if(state.clicks<cost){
     if(auto){state.autoRoll=false;addLog('Auto Roll остановлен: недостаточно кликов.');}
@@ -596,6 +724,7 @@ function rollAura(options={}){
   state.clicks-=cost; state.stats.auraRolls++;
 
   const a=luckyAuraRoll(); const id=a.id; const wasOwned=state.ownedAuras.includes(id);
+  if(a.odds>=4000)state.auraPity=0;else state.auraPity=Number(state.auraPity||0)+1;
   if(wasOwned){ state.auraLevels[id]=(state.auraLevels[id]||1)+1; }
   else{
     state.ownedAuras.push(id); state.auraLevels[id]=1;
@@ -603,16 +732,27 @@ function rollAura(options={}){
     if(!currentLocked)state.equippedAura=id;
   }
   state.stats.rarestAuraOdds=Math.max(state.stats.rarestAuraOdds||0,a.odds);
+  state.rngHistory=[{id:a.id,odds:a.odds,time:Date.now()},...(state.rngHistory||[])].slice(0,30);
   applyAura(); achievements();
 
   const skipped=auto && a.odds<state.autoSkipOdds;
-  if(!skipped){
+  if(!silent&&!skipped){
     const result=document.getElementById('auraRollResult');
     if(result)result.innerHTML=`<span style="color:${rarity[a.rarity].color}">${a.name}<br>1/${a.odds.toLocaleString('ru-RU')} • Luck x${auraLuckMultiplier().toFixed(2)}${wasOwned?`<br>ДУБЛИКАТ → ур. ${state.auraLevels[id]}`:''}</span>`;
     addLog(`${wasOwned?'Дубликат':'Новая аура'}: ${a.name} • 1/${a.odds.toLocaleString('ru-RU')}`);
-    if(!auto)auraFlash(a); else if(a.odds>=65536)auraFlash(a);
+    if(!auto)auraFlash(a); else if(a.odds>=4000)auraFlash(a);
   }
-  render();save();return a;
+  if(!defer){render();save();}return a;
+}
+function rollAuraBatch(count){
+  const total=count*500;if(state.clicks<total){addLog(`Для x${count} нужно ${fmt(total)} кликов.`);return;}
+  let best=null,newCount=0;
+  for(let i=0;i<count;i++){
+    const before=state.ownedAuras.length,a=rollAura({auto:true,silent:true,defer:true});
+    if(!a)break;if(state.ownedAuras.length>before)newCount++;if(!best||a.odds>best.odds)best=a;
+  }
+  if(best){const result=document.getElementById('auraRollResult');if(result)result.innerHTML=`<span style="color:${rarity[best.rarity].color}">x${count}: лучшая — ${best.name}<br>1/${best.odds.toLocaleString('ru-RU')} • новых: ${newCount}</span>`;addLog(`Multi Roll x${count}: ${best.name} • 1/${best.odds.toLocaleString('ru-RU')}`);if(best.odds>=4000)auraFlash(best);}
+  render();save();
 }
 function toggleAuraLock(id){
   if(!state.ownedAuras.includes(id))return;
@@ -649,27 +789,30 @@ function roll(chances){
 }
 function openEgg(id){
   const egg=eggs.find(x=>x.id===id);
-  if(state[egg.currency] < egg.cost) return;
-  state[egg.currency]-=egg.cost;
+  if(!egg||egg.world!==state.activeWorld)return;
+  const cost=eggCostValue(egg);if(state[egg.currency] < cost) return;
+  state[egg.currency]-=cost;
   const rolledRarity=roll(egg.rarityChances);
-  const candidates=Object.entries(pets).filter(([,p])=>p.rarity===rolledRarity);
+  const candidates=Object.entries(pets).filter(([petId,p])=>p.rarity===rolledRarity&&egg.petPool.includes(petId));
   const petId=candidates[Math.floor(Math.random()*candidates.length)][0];
   const uid=(window.crypto && typeof window.crypto.randomUUID==='function')
     ? window.crypto.randomUUID()
     : Date.now()+'_'+Math.random().toString(36).slice(2);
-  state.petInventory.push({uid,petId,level:1,stage:'normal'});
   const p=pets[petId];
   state.stats.eggsOpened++;
-  addLog(`Из яйца выпал: ${p.name} (${rarity[p.rarity].name})`);
+  const deleteRank=state.autoDeleteMax==='none'?-1:PET_RARITY_RANK[state.autoDeleteMax];
+  if(PET_RARITY_RANK[p.rarity]<=deleteRank)addLog(`Auto Delete: ${p.name} (${rarity[p.rarity].name})`);
+  else{state.petInventory.push({uid,petId,level:1,stage:'normal',world:egg.world});addLog(`Из яйца выпал: ${p.name} (${rarity[p.rarity].name})`);}
   haptic(p.rarity==='mythical'?'heavy':'light');
   achievements();
   render(); save();
 }
+function openEggBatch(id,count){const egg=eggs.find(x=>x.id===id);if(!egg||egg.world!==state.activeWorld)return;const cost=eggCostValue(egg)*count;if(state[egg.currency]<cost){addLog(`Для x${count} нужно ${fmt(cost)} ${egg.currency==='crystals'?'кристаллов':'кликов'}.`);return;}for(let i=0;i<count;i++)openEgg(id);addLog(`🥚 Открыто яиц: ${count}.`);render();save();}
 
 function toggleEquip(uid){
   const i=state.equippedPets.indexOf(uid);
   if(i>=0) state.equippedPets.splice(i,1);
-  else if(state.equippedPets.length<3) state.equippedPets.push(uid);
+  else if(state.equippedPets.length<petSlotLimit()) state.equippedPets.push(uid);
   render(); save();
 }
 function deletePet(uid){
@@ -697,6 +840,22 @@ function evolvePet(uid){
   const consume=matches.slice(0,2).map(p=>p.uid); state.petInventory=state.petInventory.filter(p=>!consume.includes(p.uid));
   target.stage=PET_STAGE_ORDER[pos+1]; addLog(`✨ ${pets[target.petId].name} → ${PET_STAGES[target.stage].name}!`);haptic('success');render();save();
 }
+function petScore(entry){
+  const p=pets[entry.petId];if(!p)return 0;const boost=Math.pow(1.35,entry.level-1)*(PET_STAGES[entry.stage||'normal']?.mult||1);return ((p.click-1)+(p.auto-1))*boost;
+}
+function autoEquipBestPets(){
+  state.equippedPets=[...state.petInventory].sort((a,b)=>petScore(b)-petScore(a)).slice(0,petSlotLimit()).map(p=>p.uid);
+  addLog(`⚡ Экипированы ${state.equippedPets.length} самых сильных питомца.`);render();save();
+}
+function fuseAllPets(){
+  let fused=0,changed=true;
+  while(changed){changed=false;const groups={};state.petInventory.filter(p=>!state.equippedPets.includes(p.uid)).forEach(p=>{const k=`${p.petId}|${p.level}|${p.stage||'normal'}`;(groups[k]??=[]).push(p);});
+    for(const group of Object.values(groups)){if(group.length<3)continue;const target=group[0],consume=new Set(group.slice(1,3).map(p=>p.uid));state.petInventory=state.petInventory.filter(p=>!consume.has(p.uid));target.level++;fused++;changed=true;break;}
+  }
+  addLog(fused?`🧬 Выполнено слияний: ${fused}.`:'Нет доступных троек для слияния.');render();save();
+}
+function savePetPreset(){const key=state.activePetPreset||'tap';state.petPresets[key]=[...state.equippedPets];addLog(`💾 Пресет «${key}» сохранён.`);save();}
+function loadPetPreset(){const key=state.activePetPreset||'tap',owned=new Set(state.petInventory.map(p=>p.uid));state.equippedPets=(state.petPresets[key]||[]).filter(uid=>owned.has(uid)).slice(0,petSlotLimit());addLog(`🐾 Пресет «${key}» экипирован.`);render();save();}
 
 function achievements(){
   const found=auras.filter(a=>state.ownedAuras.includes(a.id)).length;
@@ -740,7 +899,7 @@ function renderTop(){
   const pm=petMultipliers();
   document.getElementById('petClickMult').textContent='x'+pm.click.toFixed(2);
   document.getElementById('petAutoMult').textContent='x'+pm.auto.toFixed(2);
-  document.getElementById('petSlots').textContent=`${state.equippedPets.length} / 3`;
+  document.getElementById('petSlots').textContent=`${state.equippedPets.length} / ${petSlotLimit()}`;
   document.getElementById('equippedAuraLabel').textContent='Аура: '+(auras.find(a=>a.id===state.equippedAura)?.name||'Нет');
   document.getElementById('equippedPets').textContent=state.equippedPets.length
     ? state.equippedPets.map(uid=>{
@@ -822,26 +981,44 @@ function renderAuras(){
 
 function renderEggs(){
   const el=document.getElementById('eggList'); el.innerHTML='';
-  eggs.forEach(e=>{
+  eggs.filter(e=>e.world===state.activeWorld).forEach(e=>{
+    const cost=eggCostValue(e);
     const chances=e.rarityChances.map(([r,c])=>`${rarity[r].name}: ${c}%`).join(' • ');
     const d=document.createElement('div'); d.className='item';
     d.innerHTML=`
-      <span class="badge">Гача</span><h3>${e.name}</h3>
+      <span class="badge">${activeWorldDef().name}</span><h3>${e.name}</h3>
       <p>${chances}</p>
-      <button ${state[e.currency]<e.cost?'disabled':''}>Открыть за ${fmt(e.cost)} ${e.currency==='crystals'?'кристаллов':'кликов'}</button>`;
+      <button ${state[e.currency]<cost?'disabled':''}>Открыть за ${fmt(cost)} ${e.currency==='crystals'?'кристаллов':'кликов'}</button>
+      <button class="egg-x10" ${state[e.currency]<cost*10?'disabled':''}>Открыть x10 • ${fmt(cost*10)}</button>`;
     d.querySelector('button').onclick=()=>openEgg(e.id);
+    d.querySelector('.egg-x10').onclick=()=>openEggBatch(e.id,10);
     el.appendChild(d);
   })
 }
 function renderPets(){
   const el=document.getElementById('petInventory'); el.innerHTML='';
+  const sort={...defaultState.petSort,...(state.petSort||{})};state.petSort=sort;
+  const count=document.getElementById('petInventoryCount');if(count)count.textContent=`${state.petInventory.length} питомцев`;
   if(!state.petInventory.length){el.innerHTML='<p class="small">Питомцев пока нет. Открой яйцо.</p>';return;}
-  state.petInventory.forEach(entry=>{
+  const petPower=entry=>{const p=pets[entry.petId];if(!p)return 0;const boost=Math.pow(1.35,entry.level-1)*(PET_STAGES[entry.stage||'normal']?.mult||1);return ((p.click-1)+(p.auto-1))*boost;};
+  const entries=[...state.petInventory].sort((a,b)=>{
+    const ae=state.equippedPets.includes(a.uid),be=state.equippedPets.includes(b.uid);
+    if(sort.equippedFirst&&ae!==be)return ae?-1:1;
+    let av,bv;
+    if(sort.key==='rarity'){av=PET_RARITY_RANK[pets[a.petId]?.rarity]||0;bv=PET_RARITY_RANK[pets[b.petId]?.rarity]||0;}
+    else if(sort.key==='level'){av=a.level;bv=b.level;}
+    else if(sort.key==='name'){av=pets[a.petId]?.name||'';bv=pets[b.petId]?.name||'';}
+    else if(sort.key==='newest'){av=state.petInventory.indexOf(a);bv=state.petInventory.indexOf(b);}
+    else{av=petPower(a);bv=petPower(b);}
+    const cmp=typeof av==='string'?av.localeCompare(bv,'ru'):av-bv;
+    return sort.direction==='asc'?cmp:-cmp;
+  });
+  entries.forEach(entry=>{
     const p=pets[entry.petId], equipped=state.equippedPets.includes(entry.uid);
     if(!p) return;
     const boost=Math.pow(1.35,entry.level-1);
     const stage=entry.stage||'normal', stageBoost=PET_STAGES[stage]?.mult||1;
-    const click=1+(p.click-1)*boost*stageBoost, auto=1+(p.auto-1)*boost*stageBoost;
+    const click=1+(p.click-1)*boost*stageBoost*treePetMultiplier()*masteryPetMultiplier(), auto=1+(p.auto-1)*boost*stageBoost*treePetMultiplier()*masteryPetMultiplier();
     const d=document.createElement('div'); d.className='pet '+(equipped?'equipped':'');
     d.innerHTML=`
       <h3>${p.name} <span class="small">ур.${entry.level}</span></h3>
@@ -875,26 +1052,31 @@ function renderRebirth(){
     ? `Переродиться за ${fmt(c)} кликов`
     : `Нужно ${fmt(c)} кликов`;
 }
+function renderRebirthMilestones(){const el=document.getElementById('rebirthMilestones');if(!el)return;const complete=REBIRTH_MILESTONES.filter(m=>hasRebirthMilestone(m.at)).length;document.getElementById('rebirthMilestoneCount').textContent=`${complete} / ${REBIRTH_MILESTONES.length}`;el.innerHTML=REBIRTH_MILESTONES.map(m=>{const done=hasRebirthMilestone(m.at);return `<div class="rebirth-milestone ${done?'done':''}"><div class="milestone-orb">${done?'✓':m.at}</div><div><b>${m.at} ♻️ • ${m.name}</b><p>${m.desc}</p></div><span>${done?'АКТИВНО':'ЗАКРЫТО'}</span></div>`;}).join('');}
 
 function doRebirth(){
   const cost = rebirthCost();
   if(state.clicks < cost){ addLog(`Для перерождения нужно ${fmt(cost-state.clicks)} кликов.`); return; }
 
   state.rebirths++;
-  state.souls++;
+  const soulsEarned=1+Math.floor((state.rebirthTree.soulYield||0)/3)+(hasRebirthMilestone(10)?1:0);
+  state.souls+=soulsEarned;
   state.clicks = 0;
   state.upgradeLevels = {};
   state.crystals += 3;
 
-  addLog(`Перерождение #${state.rebirths}! +1 Soul • множитель x${rebirthMultiplier().toFixed(2)}.`);haptic('success');
+  addLog(`Перерождение #${state.rebirths}! +${soulsEarned} Soul • множитель x${rebirthMultiplier().toFixed(2)}.`);haptic('success');
   render();
   save();
 }
 
 
-function soulNodeCost(id){ return (state.rebirthTree[id]||0)+1; }
+function soulNodeDef(id){return SOUL_TREE_NODES.find(n=>n.id===id);}
+function soulNodeCost(id){const n=soulNodeDef(id);return n?Math.ceil(n.baseCost*Math.pow(1.55,state.rebirthTree[id]||0)):Infinity;}
 function buySoulNode(id){
-  if(!(id in state.rebirthTree))return;
+  const node=soulNodeDef(id);if(!node)return;
+  const level=state.rebirthTree[id]||0;if(level>=node.max){addLog('Узел уже улучшен до максимума.');return;}
+  if(node.requires&&(state.rebirthTree[node.requires[0]]||0)<node.requires[1]){addLog('Сначала открой предыдущий узел дерева.');return;}
   const c=soulNodeCost(id); if(state.souls<c){addLog(`Нужно ${c} Soul.`);return;}
   state.souls-=c;state.rebirthTree[id]++;state.maxEnergy=maxEnergyValue();state.energyRegen=baseEnergyRegen();addLog(`Дерево: ${id} → ур. ${state.rebirthTree[id]}`);haptic('success');render();save();
 }
@@ -1056,10 +1238,15 @@ function questRewardText(r){
   const parts=[];if(r.clicks)parts.push(`+${fmt(r.clicks)} кликов`);if(r.crystals)parts.push(`+${r.crystals} 💎`);if(r.boost)parts.push(`+1 ${r.boost} Luck`);return parts.join(' • ');
 }
 function claimQuest(id){
-  const q=QUESTS.find(x=>x.id===id);if(!q||state.questClaims[id]||q.get()<q.target)return;
-  state.questClaims[id]=true;giveReward(q.reward);state.stats.questsCompleted++;addLog(`✅ Задание: ${q.name}`);haptic('success');render();save();
+  ensureDailyQuests();const q=dailyQuestSelection().find(x=>x.id===id);if(!q)return;const value=Math.max(0,(state.stats[q.stat]||0)-(state.dailyQuests.base[q.stat]||0));if(state.dailyQuests.claims[id]||value<q.target)return;
+  state.dailyQuests.claims[id]=true;giveReward(q.reward);state.stats.questsCompleted++;addLog(`✅ Ежедневное задание: ${q.name}`);haptic('success');render();save();
 }
 function localDayKey(d=new Date()){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
+function dailyQuestSelection(){const key=localDayKey(),seed=[...key].reduce((s,c)=>s+c.charCodeAt(0),0),pool=[...DAILY_QUEST_POOL];return Array.from({length:3},(_,i)=>pool.splice((seed+i*7)%pool.length,1)[0]);}
+function ensureDailyQuests(){
+  const key=localDayKey();if(state.dailyQuests?.date===key)return;
+  const base={};DAILY_QUEST_POOL.forEach(q=>base[q.stat]=Number(state.stats[q.stat]||0));state.dailyQuests={date:key,base,claims:{}};
+}
 function yesterdayKey(){const d=new Date();d.setDate(d.getDate()-1);return localDayKey(d);}
 function dailyRewardFor(day){
   return [
@@ -1077,6 +1264,7 @@ function claimIndexReward(id){
   const found=auras.filter(a=>state.ownedAuras.includes(a.id)).length;if(found<r.count)return;
   state.indexRewards[id]=true;giveReward(r.reward);addLog(`📖 Индекс ${r.text}: ${questRewardText(r.reward)}`);haptic('success');render();save();
 }
+function claimRngMilestone(id){const m=RNG_MILESTONES.find(x=>x.id===id);if(!m||state.rngMilestones[id]||state.stats.auraRolls<m.target)return;state.rngMilestones[id]=true;giveReward(m.reward);addLog(`🏁 ${fmt(m.target)} RNG-роллов: ${questRewardText(m.reward)}`);haptic('success');render();save();}
 function startRandomEvent(){
   const e=EVENTS[Math.floor(Math.random()*EVENTS.length)];state.activeEvent=e.id;state.eventEnd=Date.now()+e.duration;state.nextEventAt=state.eventEnd+90000;addLog(`${e.name}: ${e.desc}`);haptic('success');render();save();
 }
@@ -1091,7 +1279,7 @@ function startBoss(){
 function attackBoss(){
   if(!state.boss.active)return;
   if(state.energy<1){addLog('Нет энергии для удара по боссу.');return;}
-  state.energy-=1;const dmg=perClick()*8;state.boss.hp-=dmg;haptic('light');if(state.boss.hp<=0)winBoss();renderBoss();renderTop();save();
+  state.energy-=1;const dmg=perClick()*8*bossDamageMultiplier()*masteryBossMultiplier();state.boss.hp-=dmg;haptic('light');if(state.boss.hp<=0)winBoss();renderBoss();renderTop();save();
 }
 function winBoss(){
   if(!state.boss.active)return;
@@ -1103,7 +1291,7 @@ function failBoss(){
 
 function auraIndexMultiplier(a,level){
   if(!level) return a.mult;
-  const levelScale=1+0.15*(level-1);
+  const levelScale=1+0.12*Math.min(level-1,25);
   return 1+(a.mult-1)*levelScale;
 }
 
@@ -1165,12 +1353,20 @@ function renderEnergyUpgrades(){
 }
 function renderSoulTree(){
   const el=document.getElementById('soulTree');if(!el)return;document.getElementById('soulsValue').textContent=state.souls;
-  const nodes={power:['⚔️ Сила','+10% ко всему урону/кликам'],luck:['🍀 Soul Luck','+0.25 к RNG Luck'],energy:['🔋 Батарея','+20 энергии'],regen:['⚡ Реген','+0.25 энергии/сек'],auto:['🤖 Авто-мощь','+15% автоклика']};
-  el.innerHTML='';Object.entries(nodes).forEach(([id,[name,desc]])=>{const lv=state.rebirthTree[id]||0,c=soulNodeCost(id),d=document.createElement('div');d.className='tree-node';d.innerHTML=`<b>${name}</b><span>Ур. ${lv}</span><p>${desc}</p><button>Улучшить за ${c} Soul</button>`;d.querySelector('button').onclick=()=>buySoulNode(id);el.appendChild(d);});
+  el.innerHTML='';SOUL_TREE_NODES.forEach(node=>{const lv=state.rebirthTree[node.id]||0,c=soulNodeCost(node.id),maxed=lv>=node.max,locked=node.requires&&(state.rebirthTree[node.requires[0]]||0)<node.requires[1],d=document.createElement('div');d.className='tree-node '+(locked?'locked ':'')+(maxed?'maxed':'');const req=locked?`Нужно: ${soulNodeDef(node.requires[0]).name.replace(/^\S+\s/,'')} ур. ${node.requires[1]}`:'';d.innerHTML=`<b>${node.name}</b><span>Ур. ${lv} / ${node.max}</span><p>${node.desc}</p>${req?`<small>${req}</small>`:''}<button ${locked||maxed?'disabled':''}>${maxed?'МАКСИМУМ':locked?'ЗАБЛОКИРОВАНО':`Улучшить за ${c} Soul`}</button>`;d.querySelector('button').onclick=()=>buySoulNode(node.id);el.appendChild(d);});
+}
+function renderMasteryTree(){
+  const el=document.getElementById('masteryTree');if(!el)return;const available=masteryPointsAvailable();document.getElementById('masteryPoints').textContent=available;
+  const progress=document.getElementById('masteryProgress');if(progress)progress.textContent=`Получено: ${masteryPointsEarned()} • потрачено: ${masteryPointsSpent()} • источники: 500 тапов, 100 RNG, 10 яиц, перерождения и боссы`;
+  el.innerHTML='';MASTERY_TREE_NODES.forEach(node=>{const level=masteryLevel(node.id),maxed=level>=node.max,locked=node.requires&&masteryLevel(node.requires[0])<node.requires[1],d=document.createElement('div');d.className=`mastery-node branch-${node.branch} ${locked?'locked ':''}${maxed?'maxed':''}`;const req=locked?`Нужно: ${masteryNodeDef(node.requires[0]).name.replace(/^\S+\s/,'')} ур. ${node.requires[1]}`:'';d.innerHTML=`<div class="mastery-node-icon">${node.name.split(' ')[0]}</div><b>${node.name.replace(/^\S+\s/,'')}</b><span>Ур. ${level} / ${node.max}</span><p>${node.desc}</p>${req?`<small>${req}</small>`:''}<button ${locked||maxed?'disabled':''}>${maxed?'MAX':locked?'🔒':`${node.cost} очк.`}</button>`;d.querySelector('button').onclick=()=>buyMasteryNode(node.id);el.appendChild(d);});
 }
 function renderQuests(){
-  const qel=document.getElementById('questGrid');if(!qel)return;qel.innerHTML='';QUESTS.forEach(q=>{const v=q.get(),done=v>=q.target,claimed=state.questClaims[q.id],d=document.createElement('div');d.className='quest-card';d.innerHTML=`<b>${q.name}</b><span>${Math.min(v,q.target)} / ${q.target}</span><div class="mini-progress"><i style="width:${Math.min(100,v/q.target*100)}%"></i></div><p>${questRewardText(q.reward)}</p><button ${!done||claimed?'disabled':''}>${claimed?'Получено':done?'Забрать':'В процессе'}</button>`;d.querySelector('button').onclick=()=>claimQuest(q.id);qel.appendChild(d);});
+  const qel=document.getElementById('questGrid');if(!qel)return;ensureDailyQuests();qel.innerHTML='';dailyQuestSelection().forEach(q=>{const v=Math.max(0,(state.stats[q.stat]||0)-(state.dailyQuests.base[q.stat]||0)),done=v>=q.target,claimed=state.dailyQuests.claims[q.id],d=document.createElement('div');d.className='quest-card';d.innerHTML=`<b>${q.name}</b><span>${Math.min(v,q.target)} / ${q.target}</span><div class="mini-progress"><i style="width:${Math.min(100,v/q.target*100)}%"></i></div><p>${questRewardText(q.reward)}</p><button ${!done||claimed?'disabled':''}>${claimed?'Получено':done?'Забрать':'В процессе'}</button>`;d.querySelector('button').onclick=()=>claimQuest(q.id);qel.appendChild(d);});
   const ael=document.getElementById('achievementGrid');if(ael){const list=[['c1','1 000 кликов'],['c2','100 000 кликов'],['million','1 000 000 кликов'],['reb10','10 перерождений'],['a10','10 аур'],['a20','20 аур'],['rare65536','Аура 1/65 536+'],['boss3','3 босса']];ael.innerHTML=list.map(([id,n])=>`<div class="achievement ${state.achievements[id]?'done':''}"><b>${state.achievements[id]?'✓':'○'} ${n}</b></div>`).join('');}
+}
+function renderRngExtras(){
+  const milestones=document.getElementById('rngMilestones');if(milestones)milestones.innerHTML=RNG_MILESTONES.map(m=>{const done=state.stats.auraRolls>=m.target,claimed=state.rngMilestones[m.id];return `<div class="rng-milestone"><b>${fmt(m.target)} роллов</b><span>${questRewardText(m.reward)}</span><button data-milestone="${m.id}" ${!done||claimed?'disabled':''}>${claimed?'Получено':done?'Забрать':`${fmt(state.stats.auraRolls)} / ${fmt(m.target)}`}</button></div>`;}).join('');if(milestones)milestones.querySelectorAll('[data-milestone]').forEach(b=>b.onclick=()=>claimRngMilestone(b.dataset.milestone));
+  const history=document.getElementById('rngHistory');if(history){const rows=(state.rngHistory||[]).map(h=>{const a=auras.find(x=>x.id===h.id);return a?`<div><span style="color:${rarity[a.rarity].color}">${a.name}</span><b>1/${a.odds.toLocaleString('ru-RU')}</b></div>`:'';}).join('');history.innerHTML=rows||'<p class="small">История появится после первой прокрутки.</p>';}
 }
 function renderDaily(){
   const b=document.getElementById('dailyClaimBtn');if(!b)return;const day=canClaimDaily()?(state.daily.lastClaim===yesterdayKey()?Math.min(7,state.daily.streak+1):1):state.daily.streak;document.getElementById('dailyStreak').textContent=`День ${day} / 7`;document.getElementById('dailyReward').textContent=questRewardText(dailyRewardFor(day||1));b.disabled=!canClaimDaily();b.textContent=canClaimDaily()?'Забрать награду':'Уже получено сегодня';
@@ -1183,12 +1379,17 @@ function renderEvents(){
   const el=document.getElementById('eventPanel');if(!el)return;const e=activeEventDef();if(e){el.innerHTML=`<b>${e.name}</b><span>${e.desc}</span><strong>${Math.ceil(eventTimeLeft()/1000)} сек</strong>`;}else{el.innerHTML='<b>Событий сейчас нет</b><span>Случайные ивенты появляются автоматически.</span>';}
 }
 function renderStats(){
-  const el=document.getElementById('statsGrid');if(!el)return;const found=auras.filter(a=>state.ownedAuras.includes(a.id)).length;const entries=[['Всего кликов',fmt(state.totalClicks)],['Ручных тапов',fmt(state.stats.manualTaps)],['RNG-роллов',fmt(state.stats.auraRolls)],['Самая редкая аура',state.stats.rarestAuraOdds?`1/${state.stats.rarestAuraOdds.toLocaleString('ru-RU')}`:'—'],['Ауры',`${found}/${auras.length}`],['Яиц открыто',fmt(state.stats.eggsOpened)],['Питомцев',state.petInventory.length],['Перерождения',state.rebirths],['Souls',state.souls],['Боссы',state.boss.wins],['Мини-игры',state.stats.miniGamesPlayed],['Время в игре',Math.floor(state.stats.playTime/60)+' мин']];el.innerHTML=entries.map(([k,v])=>`<div class="metric"><span>${k}</span><b>${v}</b></div>`).join('');
+  const el=document.getElementById('statsGrid');if(!el)return;const found=auras.filter(a=>state.ownedAuras.includes(a.id)).length;const entries=[['Всего кликов',fmt(state.totalClicks)],['Ручных тапов',fmt(state.stats.manualTaps)],['RNG-роллов',fmt(state.stats.auraRolls)],['Самая редкая аура',state.stats.rarestAuraOdds?`1/${state.stats.rarestAuraOdds.toLocaleString('ru-RU')}`:'—'],['Ауры',`${found}/${auras.length}`],['Яиц открыто',fmt(state.stats.eggsOpened)],['Питомцев',state.petInventory.length],['Текущий мир',activeWorldDef().name],['Перерождения',state.rebirths],['Souls',state.souls],['Боссы',state.boss.wins],['Мини-игры',state.stats.miniGamesPlayed],['Время в игре',Math.floor(state.stats.playTime/60)+' мин']];el.innerHTML=entries.map(([k,v])=>`<div class="metric"><span>${k}</span><b>${v}</b></div>`).join('');
 }
+function renderWorlds(){syncWorldUnlocks();const grid=document.getElementById('worldGrid');if(!grid)return;const active=activeWorldDef(),limits={neon:17,cyber:23,void:29,celestial:33};document.getElementById('activeWorldBadge').textContent=active.name;grid.innerHTML=WORLDS.map(w=>{const unlocked=state.unlockedWorlds.includes(w.id),selected=w.id===state.activeWorld,maxAura=auras[limits[w.id]];return `<div class="world-card ${selected?'active ':''}${unlocked?'':'locked'}"><div class="world-portal">${w.name.split(' ')[0]}</div><h3>${w.name.replace(/^\S+\s/,'')}</h3><p>${w.desc}</p><div class="world-bonuses"><span>Тап x${w.click}</span><span>Авто x${w.auto}</span><span>Luck x${w.luck}</span><span>Ауры до 1/${fmt(maxAura.odds)}</span></div><button data-world="${w.id}" ${!unlocked||selected?'disabled':''}>${selected?'ТЕКУЩИЙ МИР':unlocked?'ВОЙТИ':`🔒 ${w.rebirths} перерожд.`}</button></div>`;}).join('');grid.querySelectorAll('[data-world]').forEach(b=>b.onclick=()=>travelWorld(b.dataset.world));
+  const roadmap=document.getElementById('unlockRoadmap');if(roadmap){const steps=[['0','Клики, яйца, питомцы, мини-игры и миры'],['1','RNG-ауры'],['2','Задания и Cyber Space'],['3','Индекс аур'],['4','Деревья прокачки'],['5','Босс и Void'],['10','Celestial Realm']];roadmap.innerHTML=steps.map(([r,n])=>`<div class="unlock-step ${state.rebirths>=Number(r)?'done':''}"><b>${state.rebirths>=Number(r)?'✓':'🔒'} ${r} ♻️</b><span>${n}</span></div>`).join('');}
+}
+function renderFeatureUnlocks(){document.querySelectorAll('.tab[data-tab]').forEach(tab=>{const req=FEATURE_UNLOCKS[tab.dataset.tab]||0,locked=state.rebirths<req;tab.classList.toggle('feature-locked',locked);tab.dataset.requirement=locked?String(req):'';const base=tab.dataset.baseLabel||tab.textContent.replace(/\s*🔒.*$/,'');tab.dataset.baseLabel=base;tab.textContent=locked?`${base} 🔒${req}`:base;});}
+function renderCommandCenter(){const rank=currentNeonRank(),index=NEON_RANKS.indexOf(rank),next=NEON_RANKS[index+1];document.getElementById('rankIcon').textContent=rank.icon;document.getElementById('rankName').textContent=rank.name;document.getElementById('rankBonus').textContent=`Бонус дохода x${rank.mult.toFixed(2)}`;document.getElementById('dashboardWorld').textContent=activeWorldDef().name.replace(/^\S+\s/,'');const stages=[1,2,3,4,5,10,15,25],nextStage=stages.find(x=>x>state.rebirths);document.getElementById('dashboardNext').textContent=nextStage?`${nextStage} ♻️`:'Все этапы открыты';const from=rank.at,to=next?.at??rank.at,progress=next?Math.max(0,Math.min(1,(state.rebirths-from)/(to-from))):1;document.getElementById('rankProgressFill').style.width=`${progress*100}%`;document.getElementById('rankProgressText').textContent=next?`${state.rebirths} / ${next.at} ♻️`:'MAX RANK';}
 
 function render(){
-  renderTop();renderUpgrades();renderAuras();renderEggs();renderPets();renderRebirth();renderMinigames();renderAuraLuck();renderAuraIndex();
-  renderAutoRoll();renderBoosts();renderEnergyUpgrades();renderSoulTree();renderQuests();renderDaily();renderBoss();renderEvents();renderStats();
+  renderTop();renderUpgrades();renderAuras();renderEggs();renderPets();renderRebirth();renderRebirthMilestones();renderMinigames();renderAuraLuck();renderAuraIndex();
+  renderAutoRoll();renderBoosts();renderEnergyUpgrades();renderMasteryTree();renderSoulTree();renderQuests();renderDaily();renderRngExtras();renderWorlds();renderFeatureUnlocks();renderCommandCenter();renderBoss();renderEvents();renderStats();
   if(!document.getElementById('adminBackdrop')?.classList.contains('hidden'))renderAdminPanel();
 }
 
@@ -1203,6 +1404,8 @@ function fastPress(id, handler){
 
 fastPress('clickButton', doClick);
 fastPress('rollAuraBtn', rollAura);
+fastPress('rollAura5Btn', ()=>rollAuraBatch(5));
+fastPress('rollAura10Btn', ()=>rollAuraBatch(10));
 fastPress('auraLuckBtn', buyAuraLuck);
 fastPress('rebirthBtn', doRebirth);
 fastPress('reactionButton', startReaction);
@@ -1215,27 +1418,22 @@ fastPress('energyRegenBtn', buyEnergyRegen);
 fastPress('dailyClaimBtn', claimDaily);
 fastPress('bossStartBtn', startBoss);
 fastPress('bossAttackBtn', attackBoss);
+fastPress('petAutoEquip', autoEquipBestPets);
+fastPress('petFuseAll', fuseAllPets);
 const skipSelect=document.getElementById('autoSkipSelect');if(skipSelect)skipSelect.addEventListener('change',()=>{state.autoSkipOdds=Number(skipSelect.value);save();renderAutoRoll();});
+const petSortSelect=document.getElementById('petSortSelect');
+const petSortDirection=document.getElementById('petSortDirection');
+const petEquippedFirst=document.getElementById('petEquippedFirst');
+if(petSortSelect){petSortSelect.value=state.petSort.key;petSortSelect.addEventListener('change',()=>{state.petSort.key=petSortSelect.value;renderPets();save();});}
+if(petSortDirection){petSortDirection.textContent=state.petSort.direction==='asc'?'↑':'↓';petSortDirection.addEventListener('click',()=>{state.petSort.direction=state.petSort.direction==='asc'?'desc':'asc';petSortDirection.textContent=state.petSort.direction==='asc'?'↑':'↓';renderPets();save();});}
+if(petEquippedFirst){petEquippedFirst.checked=state.petSort.equippedFirst;petEquippedFirst.addEventListener('change',()=>{state.petSort.equippedFirst=petEquippedFirst.checked;renderPets();save();});}
+const petPresetSelect=document.getElementById('petPresetSelect');if(petPresetSelect){petPresetSelect.value=state.activePetPreset;petPresetSelect.addEventListener('change',()=>{state.activePetPreset=petPresetSelect.value;save();});}
+const petAutoDelete=document.getElementById('petAutoDelete');if(petAutoDelete){petAutoDelete.value=state.autoDeleteMax;petAutoDelete.addEventListener('change',()=>{state.autoDeleteMax=petAutoDelete.value;addLog(`Auto Delete: ${petAutoDelete.options[petAutoDelete.selectedIndex].text}`);save();});}
+fastPress('petPresetSave',savePetPreset);fastPress('petPresetLoad',loadPetPreset);
 
-document.querySelectorAll('.tab').forEach(btn=>{
-  btn.addEventListener('pointerup', e=>{
-    if(e.pointerType==='touch') e.preventDefault();
-
-    document.querySelectorAll('.tab').forEach(x=>{
-      x.classList.toggle('active', x === btn);
-    });
-
-    document.querySelectorAll('.panel').forEach(panel=>{
-      panel.classList.add('hidden');
-    });
-
-    const target = document.getElementById(btn.dataset.tab);
-    if(target){
-      target.classList.remove('hidden');
-      window.scrollTo({top:Math.max(0,target.offsetTop-115),behavior:'smooth'});
-    }
-  }, {passive:false});
-});
+function activateTab(tabId){const btn=document.querySelector(`.tab[data-tab="${tabId}"]`),requirement=FEATURE_UNLOCKS[tabId]||0;if(!btn)return;if(state.rebirths<requirement){addLog(`🔒 Раздел откроется после ${requirement} перерождений.`);return;}document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===btn));document.querySelectorAll('.panel').forEach(panel=>panel.classList.add('hidden'));const target=document.getElementById(tabId);if(target){target.classList.remove('hidden');window.scrollTo({top:Math.max(0,target.offsetTop-115),behavior:'smooth'});}}
+document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('pointerup',e=>{if(e.pointerType==='touch')e.preventDefault();activateTab(btn.dataset.tab);},{passive:false}));
+document.querySelectorAll('[data-quick-tab]').forEach(btn=>btn.addEventListener('click',()=>activateTab(btn.dataset.quickTab)));
 
 let last=performance.now();
 let autoRollAccumulator=0;
@@ -1247,10 +1445,10 @@ setInterval(()=>{
 
   if(state.autoRoll&&state.autoRollUnlocked){
     autoRollAccumulator+=dt;
-    if(autoRollAccumulator>=1){autoRollAccumulator=0;rollAura({auto:true});}
+    if(autoRollAccumulator>=autoRollDelay()){autoRollAccumulator=0;rollAura({auto:true});}
   }
   if(state.boss.active){
-    state.boss.hp-=perSec()*2*dt;
+    state.boss.hp-=perSec()*2*bossDamageMultiplier()*masteryBossMultiplier()*dt;
     if(state.boss.hp<=0)winBoss();else if(Date.now()>=state.boss.end)failBoss();
   }
   if(state.activeEvent&&Date.now()>=state.eventEnd){state.activeEvent=null;state.nextEventAt=Date.now()+90000;addLog('Событие завершено.');}
@@ -1260,7 +1458,7 @@ setInterval(()=>{
   }
   activeLuckBoostMultiplier();achievements();renderTop();renderBoss();renderEvents();renderBoosts();
 },250);
-setInterval(()=>{renderUpgrades();renderAuras();renderRebirth();renderAuraLuck();renderAutoRoll();renderEnergyUpgrades();renderQuests();renderDaily();renderStats();},1000);
+setInterval(()=>{renderUpgrades();renderAuras();renderRebirth();renderRebirthMilestones();renderAuraLuck();renderAutoRoll();renderEnergyUpgrades();renderMasteryTree();renderQuests();renderDaily();renderCommandCenter();renderStats();},1000);
 setInterval(save,3000);
 document.addEventListener('visibilitychange',()=>{
   if(document.visibilityState==='hidden') save();
