@@ -815,3 +815,56 @@ body {
 .telegram-account-main{display:flex;align-items:center;gap:9px;min-width:0}.telegram-account-main>div{min-width:0}.telegram-account-main b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px}.telegram-account-main span:not(.telegram-dot){display:block;margin-top:2px;color:var(--muted);font-size:10px;line-height:1.25}
 .telegram-dot{width:9px;height:9px;border-radius:50%;background:#6f7893;box-shadow:0 0 10px rgba(111,120,147,.55);flex:0 0 9px}.telegram-account.cloud .telegram-dot{background:#45f29a;box-shadow:0 0 12px rgba(69,242,154,.75)}.telegram-account.syncing .telegram-dot{background:var(--ui-accent);box-shadow:0 0 12px rgba(0,234,255,.75);animation:tgPulse .8s ease-in-out infinite alternate}.telegram-account.error .telegram-dot{background:#ff526d;box-shadow:0 0 12px rgba(255,82,109,.7)}@keyframes tgPulse{from{opacity:.4}to{opacity:1}}
 #telegramSyncBtn{width:38px;height:38px;flex:0 0 38px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:#151a31;color:#fff;font-size:18px;font-weight:900}#telegramSyncBtn:disabled{opacity:.4}
+
+/* ===== MORE CLICK UPGRADES ===== */
+#upgradeList{
+  display:block!important;
+}
+.upgrade-group-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin:8px 0 10px;
+  padding:0 2px;
+}
+.upgrade-group-head:not(:first-child){margin-top:22px}
+.upgrade-group-head h2{margin:0;font-size:18px}
+.upgrade-group-head p{margin:3px 0 0;color:var(--muted);font-size:11px}
+.upgrade-group-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+.upgrade-card{
+  position:relative;
+  transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;
+}
+.upgrade-card.affordable{
+  border-color:color-mix(in srgb,var(--ui-accent) 34%,rgba(255,255,255,.08));
+  box-shadow:inset 0 0 22px rgba(0,234,255,.035);
+}
+.upgrade-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.upgrade-tier{
+  min-width:29px;
+  padding:4px 7px;
+  text-align:center;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:900;
+  color:var(--ui-accent);
+  background:rgba(0,234,255,.07);
+  border:1px solid rgba(0,234,255,.16);
+}
+.upgrade-power{
+  font-size:15px!important;
+  font-weight:900;
+  color:var(--ui-accent)!important;
+}
+@media(max-width:760px){
+  .upgrade-group-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:420px){
+  .upgrade-group-grid{grid-template-columns:1fr}
+  .upgrade-group-head{align-items:flex-start}
+}

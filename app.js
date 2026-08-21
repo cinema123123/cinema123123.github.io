@@ -17,12 +17,35 @@ const rarity = {
 };
 
 const upgrades = [
-  {id:'tap1', name:'Нейро-палец', type:'tap', amount:1, base:25, growth:1.17},
-  {id:'tap5', name:'Импульсный усилитель', type:'tap', amount:5, base:240, growth:1.20},
-  {id:'tap50', name:'Квантовый привод', type:'tap', amount:50, base:4200, growth:1.23},
-  {id:'bot1', name:'Робот-сборщик', type:'auto', amount:1, base:80, growth:1.16},
-  {id:'bot10', name:'Дрон-ферма', type:'auto', amount:10, base:950, growth:1.19},
-  {id:'bot100', name:'Кибер-завод', type:'auto', amount:100, base:15000, growth:1.22}
+  // ===== Ручной клик =====
+  {id:'tap1', name:'Нейро-палец', type:'tap', amount:1, base:25, growth:1.17, tier:1},
+  {id:'tap5', name:'Импульсный усилитель', type:'tap', amount:5, base:240, growth:1.20, tier:1},
+  {id:'tap50', name:'Квантовый привод', type:'tap', amount:50, base:4200, growth:1.23, tier:1},
+  {id:'tap250', name:'Плазменный кулак', type:'tap', amount:250, base:28000, growth:1.25, tier:2},
+  {id:'tap1000', name:'Нейронный реактор', type:'tap', amount:1000, base:180000, growth:1.27, tier:2},
+  {id:'tap5000', name:'Гипер-привод', type:'tap', amount:5000, base:1200000, growth:1.29, tier:3},
+  {id:'tap25000', name:'Сингулярный усилитель', type:'tap', amount:25000, base:8000000, growth:1.31, tier:3},
+  {id:'tap100000', name:'Ядро мегасети', type:'tap', amount:100000, base:60000000, growth:1.33, tier:4},
+  {id:'tap500000', name:'Разлом мощности', type:'tap', amount:500000, base:450000000, growth:1.35, tier:4},
+  {id:'tap2500000', name:'Двигатель реальности', type:'tap', amount:2500000, base:3500000000, growth:1.37, tier:5},
+  {id:'tap10000000', name:'Бесконечный импульс', type:'tap', amount:10000000, base:25000000000, growth:1.40, tier:5},
+  {id:'tap50000000', name:'Абсолютная сила', type:'tap', amount:50000000, base:200000000000, growth:1.42, tier:6},
+  {id:'tap250000000', name:'Небесный двигатель', type:'tap', amount:250000000, base:1500000000000, growth:1.45, tier:6},
+
+  // ===== Автоклик =====
+  {id:'bot1', name:'Робот-сборщик', type:'auto', amount:1, base:80, growth:1.16, tier:1},
+  {id:'bot10', name:'Дрон-ферма', type:'auto', amount:10, base:950, growth:1.19, tier:1},
+  {id:'bot100', name:'Кибер-завод', type:'auto', amount:100, base:15000, growth:1.22, tier:1},
+  {id:'bot500', name:'Нейро-ферма', type:'auto', amount:500, base:90000, growth:1.24, tier:2},
+  {id:'bot2500', name:'Плазменный конвейер', type:'auto', amount:2500, base:600000, growth:1.26, tier:2},
+  {id:'bot10000', name:'Квантовый дата-центр', type:'auto', amount:10000, base:4200000, growth:1.28, tier:3},
+  {id:'bot50000', name:'Мегазавод синтеза', type:'auto', amount:50000, base:30000000, growth:1.30, tier:3},
+  {id:'bot250000', name:'Орбитальная фабрика', type:'auto', amount:250000, base:220000000, growth:1.32, tier:4},
+  {id:'bot1000000', name:'Сингулярная сеть', type:'auto', amount:1000000, base:1600000000, growth:1.34, tier:4},
+  {id:'bot5000000', name:'Автономный мегакомплекс', type:'auto', amount:5000000, base:12000000000, growth:1.36, tier:5},
+  {id:'bot25000000', name:'Гиперсеть производства', type:'auto', amount:25000000, base:90000000000, growth:1.38, tier:5},
+  {id:'bot100000000', name:'Реактор бесконечного цикла', type:'auto', amount:100000000, base:700000000000, growth:1.40, tier:6},
+  {id:'bot500000000', name:'Небесная автоматика', type:'auto', amount:500000000, base:5500000000000, growth:1.43, tier:6}
 ];
 
 const auras = [
@@ -730,20 +753,39 @@ function renderTop(){
 function renderUpgrades(){
   const el=document.getElementById('upgradeList');
   el.innerHTML='';
-  upgrades.forEach(u=>{
-    const level=state.upgradeLevels[u.id]||0;
-    const cost=upgradeCost(u);
-    const affordable=state.clicks>=cost;
-    const d=document.createElement('div'); d.className='item';
-    d.innerHTML=`
-      <span class="badge">${u.type==='tap'?'Сила тапа':'Автоклик'}</span>
-      <h3>${u.name}</h3>
-      <p>+${u.amount} ${u.type==='tap'?'к базовой силе':'кликов/сек'} за уровень</p>
-      <p>Уровень: <b>${level}</b></p>
-      <button style="${affordable?'':'opacity:.7'}">Купить за ${fmt(cost)} кликов</button>`;
-    d.querySelector('button').addEventListener('click',()=>buyUpgrade(u.id));
-    el.appendChild(d);
-  })
+
+  const renderGroup=(type,title,subtitle)=>{
+    const head=document.createElement('div');
+    head.className='upgrade-group-head';
+    head.innerHTML=`<div><h2>${title}</h2><p>${subtitle}</p></div><span class="badge">${upgrades.filter(u=>u.type===type).length} улучшений</span>`;
+    el.appendChild(head);
+
+    const grid=document.createElement('div');
+    grid.className='upgrade-group-grid';
+
+    upgrades.filter(u=>u.type===type).forEach(u=>{
+      const level=state.upgradeLevels[u.id]||0;
+      const cost=upgradeCost(u);
+      const affordable=state.clicks>=cost;
+      const d=document.createElement('div');
+      d.className='item upgrade-card '+(affordable?'affordable':'');
+      d.innerHTML=`
+        <div class="upgrade-card-top">
+          <span class="badge">${type==='tap'?'Сила тапа':'Автоклик'}</span>
+          ${u.tier?`<span class="upgrade-tier">T${u.tier}</span>`:''}
+        </div>
+        <h3>${u.name}</h3>
+        <p class="upgrade-power">+${fmt(u.amount)} ${type==='tap'?'к базовой силе':'кликов/сек'}</p>
+        <p>Уровень: <b>${level}</b> • Сейчас даёт: <b>+${fmt(level*u.amount)}</b></p>
+        <button style="${affordable?'':'opacity:.7'}">Купить за ${fmt(cost)} кликов</button>`;
+      d.querySelector('button').addEventListener('click',()=>buyUpgrade(u.id));
+      grid.appendChild(d);
+    });
+    el.appendChild(grid);
+  };
+
+  renderGroup('tap','👆 Улучшения клика','Прокачивай базовую силу каждого нажатия. Новые тиры рассчитаны на позднюю игру.');
+  renderGroup('auto','🤖 Автоклик','Пассивный доход от T1 до T6 — от робота-сборщика до небесной автоматики.');
 }
 function renderAuras(){
   const el=document.getElementById('auraList'); el.innerHTML='';
